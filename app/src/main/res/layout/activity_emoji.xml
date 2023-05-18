@@ -139,42 +139,71 @@
         android:layout_marginBottom="@dimen/_5sdp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/copy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_3sdp"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:layout_weight="1"
-            android:background="@drawable/button_click"
-            android:text="@string/copy_text"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/clear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_3sdp"
-            android:layout_marginEnd="@dimen/_3sdp"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:layout_weight="1"
-            android:background="@drawable/button_click"
-            android:text="@string/clear_text"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
-
-        <Button
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/whatsapp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_3sdp"
-            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/button_click"
-            android:text="@string/share"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_3sdp"
+            app:cardCornerRadius="12sp"
+            app:cardElevation="0sp"
+            app:strokeWidth="0sp"
+            app:cardBackgroundColor="@color/back_buttn">
+
+            <ImageView
+                android:layout_width="32sp"
+                android:layout_height="32sp"
+                android:src="@drawable/share"
+                android:layout_gravity="center"
+                android:layout_margin="12sp"
+                app:tint="@color/orange" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/copy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_3sdp"
+            app:cardCornerRadius="12sp"
+            app:cardElevation="0sp"
+            app:strokeWidth="0sp"
+            app:cardBackgroundColor="@color/back_buttn">
+
+            <ImageView
+                android:layout_width="32sp"
+                android:layout_height="32sp"
+                android:src="@drawable/copy"
+                android:layout_gravity="center"
+                android:layout_margin="12sp"
+                app:tint="@color/orange" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/clear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_3sdp"
+            app:cardCornerRadius="12sp"
+            app:cardElevation="0sp"
+            app:strokeWidth="0sp"
+            app:cardBackgroundColor="@color/back_buttn">
+
+            <ImageView
+                android:layout_width="32sp"
+                android:layout_height="32sp"
+                android:src="@drawable/bin"
+                android:layout_gravity="center"
+                android:layout_margin="12sp"
+                app:tint="@color/ad_bg_color" />
+
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
