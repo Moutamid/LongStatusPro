@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import `in`.whatsaga.whatsapplongerstatus.pro.R
 import `in`.whatsaga.whatsapplongerstatus.pro.utils.Common
+import `in`.whatsaga.whatsapplongerstatus.pro.utils.Constants
 import `in`.whatsaga.whatsapplongerstatus.pro.utils.SharedPref
 import khangtran.preferenceshelper.PrefHelper
 
@@ -33,7 +34,7 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Common.setLocale(this)
         setContentView(R.layout.activity_start)
-
+        Constants.checkApp(this)
         setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)

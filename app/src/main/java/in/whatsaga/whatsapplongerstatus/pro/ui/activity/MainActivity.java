@@ -28,6 +28,7 @@ import in.whatsaga.whatsapplongerstatus.pro.ui.smartkit.EmojiActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.smartkit.StylishTextActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.smartkit.TextRepeaterActivity;
 import in.whatsaga.whatsapplongerstatus.pro.utils.Common;
+import in.whatsaga.whatsapplongerstatus.pro.utils.Constants;
 import in.whatsaga.whatsapplongerstatus.pro.whatsaga.MainAppActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Common.setLocale(this);
         setContentView(R.layout.activity_main);
 
+        Constants.checkApp(this);
 
         //     getAppStatus();
 

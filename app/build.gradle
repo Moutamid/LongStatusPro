@@ -16,7 +16,7 @@ android {
         versionCode 4
         versionName "1.0.4"
         multiDexEnabled true
-
+        setProperty("archivesBaseName", "LongStatusPro-$versionName")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
