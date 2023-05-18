@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/instructions"
+            android:icon="@drawable/instructions"
+            android:title="@string/instructions" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/settings"
+            android:title="@string/settings" />
+        <item
+            android:id="@+id/languages"
+            android:icon="@drawable/language"
+            android:title="@string/languages" />
+
+        <item
+            android:id="@+id/restart"
+            android:icon="@drawable/restart_service"
+            android:title="@string/restart_service" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/feedback"
+                android:icon="@drawable/feedback_menu"
+                android:title="@string/send_feedback" />
+            <item
+                android:id="@+id/privacy"
+                android:icon="@drawable/privacy_menu"
+                android:title="@string/privacy_policy" />
+
+            <item
+                android:id="@+id/share"
+                android:icon="@drawable/share_menu"
+                android:title="@string/share" />
+
+            <item
+                android:id="@+id/rate"
+                android:icon="@drawable/rate_menu"
+                android:title="@string/rate_us" />
+
+            <item
+                android:id="@+id/quit"
+                android:icon="@drawable/quit_menu"
+                android:title="@string/quit" />
+        </menu>
+    </item>
+
+</menu>

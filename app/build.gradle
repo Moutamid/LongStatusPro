@@ -1,0 +1,100 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+
+}
+android {
+    namespace 'in.whatsaga.whatsapplongerstatus.pro'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "in.whatsaga.whatsapplongerstatus.pro"
+        minSdk 24
+        targetSdk 33
+        versionCode 4
+        versionName "1.0.4"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'androidx.arch.core:core-runtime:2.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.20"
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.linsea:universalvideoview:1.1.0@aar'
+    implementation 'com.google.android.play:core:1.10.3'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.0-rc01'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+    implementation 'com.mikhaellopez:circularimageview:4.3.0'
+    implementation 'com.github.marlonlom:timeago:4.0.3'
+    implementation 'com.leinardi.android:speed-dial:3.1.1'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.8.0'
+    implementation 'com.github.joielechong:countrycodepicker:2.3.3'
+
+    implementation 'com.github.tntkhang:preferences-helper:1.3.2'
+    implementation 'androidx.work:work-runtime-ktx:2.8.0-alpha03'
+
+    implementation "me.leolin:ShortcutBadger:1.1.22@aar"
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    implementation 'com.romainpiel.shimmer:library:1.4.0@aar'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    implementation 'com.github.AppIntro:AppIntro:6.2.0'
+
+
+    implementation 'com.airbnb.android:lottie:5.2.0'
+
+    kapt  'androidx.room:room-compiler:2.3.0'
+    implementation 'androidx.room:room-runtime:2.3.0'
+
+    implementation 'com.droidninja:filepicker:2.2.1'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    implementation 'com.zeugmasolutions.localehelper:locale-helper-android:1.5.1'
+
+
+
+}

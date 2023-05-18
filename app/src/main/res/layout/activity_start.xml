@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.activity.StartActivity"
+    android:background="@color/back_grey">
+
+    <View
+        android:id="@+id/circleblack"
+        android:layout_width="300sp"
+        android:layout_height="300sp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:background="@drawable/circle"
+        android:backgroundTint="@color/dark" />
+
+    <View
+        android:id="@+id/circleyellow"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:background="@drawable/circle"
+        android:backgroundTint="@color/yellow" />
+
+    <View
+        android:id="@+id/circleorange"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:background="@drawable/circle"
+        android:backgroundTint="@color/orange" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_marginEnd="5sp"
+        android:fontFamily="@font/chunk"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/loading"
+        android:textSize="32sp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:textColor="@color/orange"/>
+
+
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:layout_alignParentBottom="true">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:layout_marginEnd="5sp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/dark"/>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/yellow" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@drawable/icon"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:visibility="gone"
+            android:layout_marginBottom="100dp"
+            android:theme="@style/Theme.progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:id="@+id/get_started_view"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:theme="@style/Progressbar.White"
+                android:visibility="gone" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginRight="@dimen/_50sdp"
+                android:text="@string/get_started"
+                android:visibility="gone"
+                android:letterSpacing="0.1"
+                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/button_click"/>
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

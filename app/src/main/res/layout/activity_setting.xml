@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr">
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+            android:theme="@style/ToolbarTheme"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/settings"
+            app:titleTextColor="@color/white" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/button_stroke_primary">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_notification"
+                    android:gravity="center"
+                    android:minHeight="48dp"
+                    android:paddingStart="@dimen/_6sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:text="@string/message_notification"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/notification"
+                    android:gravity="center_horizontal"
+                    android:text="@string/notifies_you"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/button_stroke_primary">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/deleted_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_deleted_notification"
+                    android:gravity="center"
+                    android:minHeight="48dp"
+                    android:paddingStart="@dimen/_6sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:text="@string/deleted_message_notification"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/deleted_notification"
+                    android:gravity="center_horizontal"
+                    android:text="@string/notifies_you_of_a"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_stroke_primary"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp">
+
+                <Button
+                    android:id="@+id/restartService"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:drawableStart="@drawable/restart_service"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/restart_service"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginVertical="@dimen/_6sdp"
+                    android:alpha="0.2"
+                    android:background="@color/colorPrimaryDark" />
+
+
+                <Button
+                    android:id="@+id/languages"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/language"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/languages"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginVertical="@dimen/_6sdp"
+                    android:alpha="0.2"
+                    android:background="@color/colorPrimaryDark" />
+
+                <Button
+                    android:id="@+id/privacy"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/privacy_menu"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/privacy"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginVertical="@dimen/_6sdp"
+                    android:alpha="0.2"
+                    android:background="@color/colorPrimaryDark" />
+
+                <Button
+                    android:id="@+id/share"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/share_menu"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/share"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginVertical="@dimen/_6sdp"
+                    android:alpha="0.2"
+                    android:background="@color/colorPrimaryDark" />
+
+                <Button
+                    android:id="@+id/rate"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:drawableStart="@drawable/rate_menu"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/rate_us"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

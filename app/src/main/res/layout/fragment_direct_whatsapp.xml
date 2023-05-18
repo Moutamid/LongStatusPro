@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.fragment.DirectWhatsappFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/button_lay"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="150sp"
+                    android:src="@drawable/direct_chat_image"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/info"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/this_features"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/note"
+                        android:fontFamily="@font/poppins"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="6sp"
+                        android:text="@string/note_it"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/edit_lay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+                <com.rilixtech.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/et_bg"
+                    android:padding="15sp"
+                    android:fontFamily="@font/poppins"
+                    app:ccp_hideNameCode="true"
+                    android:backgroundTint="@color/back_buttn"
+                    android:layout_marginEnd="12sp"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/ed_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/ccp"
+                    android:background="@drawable/et_bg"
+                    android:backgroundTint="@color/back_buttn"
+                    android:hint="@string/enter_number"
+                    android:fontFamily="@font/poppins"
+                    android:padding="12sp"
+                    android:textSize="16sp"
+                    android:inputType="number"
+                    android:textColor="@color/dark"
+                    android:textColorHint="@color/textColor" />
+
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/ed_msg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:background="@drawable/et_bg"
+                android:backgroundTint="@color/back_buttn"
+                android:hint="@string/write_a_message"
+                android:scrollHorizontally="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:padding="15sp"
+                android:gravity="top"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/button_lay"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_20sdp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/share"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardCornerRadius="16sp"
+            android:layout_marginStart="12sp"
+            android:layout_marginEnd="6sp"
+            app:cardBackgroundColor="@color/orange"
+            app:strokeWidth="0sp"
+            app:cardElevation="0sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12sp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/share"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="18sp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:layout_width="42sp"
+                    android:layout_height="42sp"
+                    app:tint="@color/whiteLight"
+                    android:src="@drawable/share" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardCornerRadius="16sp"
+            android:layout_marginStart="12sp"
+            android:layout_marginEnd="6sp"
+            app:cardBackgroundColor="@color/orange"
+            app:strokeWidth="0sp"
+            app:cardElevation="0sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12sp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/send"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="18sp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:layout_width="42sp"
+                    android:layout_height="42sp"
+                    app:tint="@color/whiteLight"
+                    android:src="@drawable/send" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
