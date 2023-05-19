@@ -8,8 +8,8 @@
     <RelativeLayout
         android:id="@+id/top"
         android:layout_width="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -23,65 +23,146 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-      android:layout_below="@id/top"
-        android:layout_marginTop="100dp"
-        android:orientation="vertical">
-
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/_15sdp"
-            android:text="@string/recover_deleted_media"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="17sp" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/top"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_120sdp"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12sp"
+                android:text="@string/recover_deleted_media"
+                android:textColor="@color/dark"
+                android:fontFamily="@font/poppins"
+                android:textSize="20sp" />
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/deleted_images"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_weight="1"
-                android:background="@drawable/button_stroke"
-                android:drawableTop="@drawable/ic_deleted_image"
-                android:paddingTop="@dimen/_10sdp"
-                android:text="@string/deleted_images"
-                android:textAllCaps="false"
-                android:textColor="#FFA5B5"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                app:cardCornerRadius="16sp"
+                app:strokeWidth="0sp"
+                app:cardElevation="0sp"
+                app:cardBackgroundColor="@color/back_buttn">
 
-            <androidx.appcompat.widget.AppCompatButton
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12sp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="0sp"
+                            app:cardCornerRadius="12sp">
+
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:layout_margin="12sp"
+                                android:layout_gravity="center"
+                                app:tint="@color/orange"
+                                android:src="@drawable/imagessolid" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/storageTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/deleted_images"
+                            android:textColor="@color/dark"
+                            android:layout_marginStart="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:textStyle="bold"
+                            android:textSize="22sp"
+                            android:letterSpacing="0.08" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/deleted_videos"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_weight="1"
-                android:background="@drawable/button_stroke_video"
-                android:drawableTop="@drawable/ic_deleted_video"
-                android:paddingTop="@dimen/_10sdp"
-                android:text="@string/deleted_videos"
-                android:textAllCaps="false"
-                android:textColor="#9158AA"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                app:cardCornerRadius="16sp"
+                app:strokeWidth="0sp"
+                app:cardElevation="0sp"
+                app:cardBackgroundColor="@color/back_buttn">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12sp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="0sp"
+                            app:cardCornerRadius="12sp">
+
+                            <ImageView
+                                android:layout_width="40sp"
+                                android:layout_height="40sp"
+                                android:layout_margin="12sp"
+                                android:layout_gravity="center"
+                                app:tint="@color/yellow"
+                                android:src="@drawable/filmsolid" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/deleted_videos"
+                            android:textColor="@color/dark"
+                            android:layout_marginStart="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:textStyle="bold"
+                            android:textSize="22sp"
+                            android:letterSpacing="0.08" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
 
         </LinearLayout>
 
+    </androidx.core.widget.NestedScrollView>
 
-    </LinearLayout>
 
 
 

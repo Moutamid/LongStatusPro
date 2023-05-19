@@ -10,61 +10,112 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/orange"
         app:title="@string/feedback"
         app:titleTextColor="@color/white" />
 
-    <ImageView
-        android:layout_width="@dimen/_45sdp"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:src="@drawable/feedback_image" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:text="@string/tell_us_the"
-        android:textColor="@color/black"
-        android:textSize="17sp" />
-
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_200sdp"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:background="@drawable/button_stroke_primary">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16sp"
+                android:layout_margin="12sp"
+                app:cardBackgroundColor="@color/back_buttn"
+                app:strokeWidth="0sp"
+                app:cardElevation="0sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12sp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tell_us_the"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="20sp"
+                        android:gravity="center_vertical"
+                        android:layout_marginEnd="12sp"
+                        android:layout_weight="1"
+                        android:textColor="@color/dark"/>
+
+                    <ImageView
+                        android:layout_width="42sp"
+                        android:layout_height="42sp"
+                        app:tint="@color/orange"
+                        android:src="@drawable/question_and_answer" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <EditText
                 android:id="@+id/ed_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
+                android:layout_height="150sp"
+                android:background="@drawable/et_bg"
+                android:backgroundTint="@color/back_buttn"
                 android:hint="@string/please_tell"
-                android:padding="@dimen/_10sdp" />
+                android:fontFamily="@font/poppins"
+                android:padding="12sp"
+                android:textSize="16sp"
+                android:layout_margin="12sp"
+                android:gravity="top"
+                android:inputType="textPersonName|textMultiLine"
+                android:textColor="@color/dark"
+                android:textColorHint="@color/textColor" />
 
-        </ScrollView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16sp"
+                android:layout_marginStart="12sp"
+                android:layout_marginEnd="6sp"
+                app:cardBackgroundColor="@color/orange"
+                app:strokeWidth="0sp"
+                app:cardElevation="0sp">
 
-    </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12sp"
+                    android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="@dimen/_120sdp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:background="@drawable/button_click"
-        android:text="@string/submit"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/send"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="18sp"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"/>
 
+                    <ImageView
+                        android:layout_width="42sp"
+                        android:layout_height="42sp"
+                        app:tint="@color/white"
+                        android:src="@drawable/send" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

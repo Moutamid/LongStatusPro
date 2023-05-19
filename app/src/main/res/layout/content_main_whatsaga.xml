@@ -1,70 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/back_grey"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main_whatsaga">
 
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/upload"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginRight="@dimen/_15sdp">
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            app:cardCornerRadius="16sp"
+            app:strokeWidth="0sp"
+            app:cardElevation="0sp"
+            app:cardBackgroundColor="@color/orange">
 
-            <Button
-                android:id="@+id/upload"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="@dimen/_5sdp"
-                android:layout_weight="1"
-                android:background="@drawable/button_white"
-                android:drawableTop="@drawable/ic_upload_main"
-                android:letterSpacing="0.08"
-                android:padding="@dimen/_8sdp"
-                android:text="Upload Long Status"
-                android:textAllCaps="false"
-                android:textColor="@color/colorPrimary" />
+                android:padding="12sp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12sp">
+
+                        <ImageView
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:layout_margin="12sp"
+                            android:layout_gravity="center"
+                            app:tint="@color/orange"
+                            android:src="@drawable/uploadsolid" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/storageTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upload Long Status"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="12sp"
+                        android:fontFamily="@font/poppins"
+                        android:textStyle="bold"
+                        android:textSize="22sp"
+                        android:letterSpacing="0.08" />
 
 
-        </LinearLayout>
+                </LinearLayout>
 
-        <LinearLayout
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/settings"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginRight="@dimen/_15sdp">
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            app:cardCornerRadius="16sp"
+            app:strokeWidth="0sp"
+            app:cardElevation="0sp"
+            app:cardBackgroundColor="@color/yellow">
 
-            <Button
-                android:id="@+id/settings"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="@dimen/_5sdp"
-                android:layout_weight="1"
-                android:background="@drawable/button_white"
-                android:drawableTop="@drawable/ic_settings_icon"
-                android:letterSpacing="0.08"
-                android:padding="@dimen/_8sdp"
-                android:text="Video Split Duration"
-                android:textAllCaps="false"
-                android:textColor="@color/colorPrimary" />
+                android:padding="12sp"
+                android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-        </LinearLayout>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12sp">
 
+                        <ImageView
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:layout_margin="12sp"
+                            android:layout_gravity="center"
+                            app:tint="@color/yellow"
+                            android:src="@drawable/gearssolid" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Video Split Duration"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="12sp"
+                        android:fontFamily="@font/poppins"
+                        android:textStyle="bold"
+                        android:textSize="22sp"
+                        android:letterSpacing="0.08" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
