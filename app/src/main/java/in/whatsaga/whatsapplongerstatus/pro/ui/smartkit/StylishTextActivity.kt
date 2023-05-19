@@ -78,13 +78,11 @@ class StylishTextActivity : AppCompatActivity(), View.OnClickListener {
                 }
                 convert()
                 recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-                recyclerView!!.setHasFixedSize(true)
-                recyclerView!!.setLayoutManager(
-                    LinearLayoutManager(
-                        this,
-                        RecyclerView.VERTICAL,
-                        false
-                    )
+                recyclerView!!.setHasFixedSize(false)
+                recyclerView!!.layoutManager = LinearLayoutManager(
+                    this,
+                    RecyclerView.VERTICAL,
+                    false
                 )
                 adapter = StyleAdapter(mFinalData!!, this)
                 recyclerView!!.setAdapter(adapter)

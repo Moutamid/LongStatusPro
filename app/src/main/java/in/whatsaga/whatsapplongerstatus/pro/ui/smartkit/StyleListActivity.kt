@@ -58,7 +58,7 @@ class StyleListActivity : AppCompatActivity() {
         boldScriptList = Common.getBoldScriptList()
         convert()
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView!!.setHasFixedSize(true)
+        recyclerView!!.setHasFixedSize(false)
         recyclerView!!.setLayoutManager(LinearLayoutManager(this, RecyclerView.VERTICAL, false))
         adapter = StyleAdapter(mFinalData as ArrayList<String>, this)
         recyclerView!!.setAdapter(adapter)

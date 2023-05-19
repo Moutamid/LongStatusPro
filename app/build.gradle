@@ -9,6 +9,10 @@ android {
     namespace 'in.whatsaga.whatsapplongerstatus.pro'
     compileSdk 33
 
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+
     defaultConfig {
         applicationId "in.whatsaga.whatsapplongerstatus.pro"
         minSdk 24
