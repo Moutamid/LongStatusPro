@@ -2,6 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/et_bg"
+    android:backgroundTint="@color/back_grey"
+    android:layout_margin="12sp"
     android:orientation="vertical">
 
     <TextView
@@ -12,8 +15,9 @@
         android:gravity="center_horizontal"
         android:letterSpacing="0.1"
         android:padding="10dp"
+        android:fontFamily="@font/montserrat_alternates"
         android:text="@string/folder_permission"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/black"
         android:textSize="22dp"
         android:textStyle="bold" />
 
@@ -29,6 +33,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="10dp"
+        android:fontFamily="@font/poppins"
         android:gravity="center_horizontal"
         android:letterSpacing="0.03"
         android:lineSpacingExtra="5dp"
@@ -46,6 +51,7 @@
         android:orientation="horizontal">
 
         <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/no"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -53,21 +59,23 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="2"
-            android:background="@drawable/cancel_btn"
             android:paddingLeft="15dp"
             android:text="@string/cancel"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/yes"
+            style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/button_click"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins"
             android:paddingLeft="15dp"
             android:text="@string/use_this_folder"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             android:textColor="@color/white" />
 
     </LinearLayout>

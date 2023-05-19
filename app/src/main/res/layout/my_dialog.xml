@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
     app:cardBackgroundColor="@color/transparent"
-    app:cardCornerRadius="4dp">
+    app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -21,8 +21,9 @@
             android:paddingVertical="8dp"
             android:paddingStart="4dp"
             android:text="@string/note"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/black"
             android:textSize="24sp"
+            android:fontFamily="@font/montserrat_alternates"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,6 +45,7 @@
             android:gravity="center_horizontal"
             android:lineSpacingExtra="@dimen/_3sdp"
             android:paddingStart="@dimen/_5sdp"
+            android:fontFamily="@font/poppins"
             android:paddingEnd="@dimen/_5sdp"
             android:text="@string/reduce_battery_life"
             android:textColor="@color/lightTextColor"
@@ -56,7 +58,6 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/allowBtn"
-            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
@@ -64,7 +65,9 @@
             android:textAllCaps="false"
             android:layout_marginEnd="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_15sdp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:backgroundTint="@color/orange"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/description" />
@@ -74,10 +77,11 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
             android:text="@string/cancel"
             android:textAllCaps="false"
             android:layout_marginTop="@dimen/_20sdp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/allowBtn"
             app:layout_constraintTop_toBottomOf="@+id/description" />
 
