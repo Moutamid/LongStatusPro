@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.3.1" type="baseline" client="gradle" dependencies="false" name="AGP (7.3.1)" variant="fatal" version="7.3.1">
+
+    <issue
+        id="UnknownId"
+        message="The id &quot;`nativeAd`&quot; is not defined anywhere."
+        errorLine1="        android:layout_above=&quot;@id/nativeAd&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_direct.xml"
+            line="55"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnknownId"
+        message="The id &quot;`nativeAd`&quot; is not defined anywhere."
+        errorLine1="        android:layout_above=&quot;@+id/nativeAd&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_whatsapp.xml"
+            line="43"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="InvalidSetHasFixedSize"
+        message="When using `setHasFixedSize() in an `RecyclerView`, `wrap_content` cannot be used as \&#xA;a value for `size` in the scrolling direction."
+        errorLine1="        recyclerView!!.setHasFixedSize(true)"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/in/whatsaga/whatsapplongerstatus/pro/ui/smartkit/StyleListActivity.kt"
+            line="61"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="InvalidSetHasFixedSize"
+        message="When using `setHasFixedSize() in an `RecyclerView`, `wrap_content` cannot be used as \&#xA;a value for `size` in the scrolling direction."
+        errorLine1="                recyclerView!!.setHasFixedSize(true)"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/in/whatsaga/whatsapplongerstatus/pro/ui/smartkit/StylishTextActivity.kt"
+            line="81"
+            column="17"/>
+    </issue>
+
+</issues>

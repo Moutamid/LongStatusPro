@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "in.whatsaga.whatsapplongerstatus.pro",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 4,
+      "versionName": "1.0.4",
+      "outputFile": "LongStatusPro-1.0.4-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

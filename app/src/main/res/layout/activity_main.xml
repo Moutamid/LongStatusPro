@@ -18,9 +18,14 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/white"
-        app:itemIconTint="@color/colorPrimary"
+        app:itemIconTint="@color/orange"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:drawerLayoutCornerSize="16sp"
+        android:scrollbarSize="0sp"
+        android:theme="@style/NavigationTheme"
+        android:backgroundTint="@color/back_grey"
+        app:itemBackground="@drawable/et_nav_bg"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 
