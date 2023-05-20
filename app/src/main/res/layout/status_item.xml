@@ -6,6 +6,7 @@
     android:layout_margin="4dp"
     android:background="?attr/selectableItemBackground"
     android:gravity="center"
+    app:cardCornerRadius="8sp"
     app:cardElevation="5dp">
 
     <RelativeLayout
@@ -37,8 +38,8 @@
                 android:id="@+id/media_icon"
                 android:layout_width="@dimen/_15sdp"
                 android:layout_height="@dimen/_15sdp"
-                android:clickable="false"
                 android:layout_centerVertical="true"
+                android:clickable="false"
                 android:src="@drawable/ic_play_mini" />
 
             <TextView
@@ -48,10 +49,10 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/media_icon"
                 android:text="10:00"
-                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_8sdp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
         </RelativeLayout>
 
@@ -60,7 +61,7 @@
             android:layout_height="match_parent"
             android:id="@+id/select_view"
             android:visibility="gone"
-            android:background="#70025C5B">
+            android:background="@color/orange_selected">
 
             <ImageView
                 android:layout_width="@dimen/_30sdp"

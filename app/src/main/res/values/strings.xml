@@ -143,58 +143,57 @@
     <string name="z" translatable="false">eeeen sssssssssssen sssssssssen  sssssssen sssssen sssen eeeen</string>
 
 
+    <string name="let_s_start">Let\'s Start</string>
+    <string name="ad" translatable="false">Ad</string>
 
+    <string name="language">Language</string>
 
-        <string name="let_s_start">Let\'s Start</string>
-        <string name="ad" translatable="false">Ad</string>
+    <string name="app_not_installed">App not installed.</string>
+    <string name="please_give_right_path">Please give right path.</string>
 
-        <string name="language">Language</string>
-
-        <string name="app_not_installed">App not installed.</string>
-        <string name="please_give_right_path">Please give right path.</string>
-
-        <string name="unseen_requires_folder_access_desc"><b>\'Whatsapp Media Folder Access\'</b> permission is needed to access
+    <string name="unseen_requires_folder_access_desc"><b>\'Whatsapp Media Folder Access\'</b> permission is needed to access
         Statuses for devices running Android Version 10 or greater.</string>
 
 
+    <string name="no_statuses">No Statuses.</string>
+    <string name="allow_access">Allow Access</string>
 
-        <string name="no_statuses">No Statuses.</string>
-        <string name="allow_access">Allow Access</string>
+    <string name="file_saved">Status Saved.</string>
+    <string name="error_image_not_saved">Error: Status not saved.</string>
 
-        <string name="file_saved">Status Saved.</string>
-        <string name="error_image_not_saved">Error: Status not saved.</string>
-
-        <string name="select_language">Select Language</string>
-        <string name="apply">Apply</string>
-        <string name="images">Images</string>
-        <string name="videos">Videos</string>
-        <string name="saved">Saved</string>
-        <string name="update">Update</string>
-        <string name="a_new_version_of_app_is_available">A new version of app is available.</string>
-        <string name="later">Later</string>
+    <string name="select_language">Select Language</string>
+    <string name="apply">Apply</string>
+    <string name="images">Images</string>
+    <string name="videos">Videos</string>
+    <string name="saved">Saved</string>
+    <string name="update">Update</string>
+    <string name="a_new_version_of_app_is_available">A new version of app is available.</string>
+    <string name="later">Later</string>
 
 
-        <string name="nav_header_title">Android Studio</string>
-        <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
 
-        <string name="directChatInfo">This Application uses WhatsApp services to start a conversation with any number included.</string>
-        <string name="directChatInfoNote">Note: It Does not store the number, Send msgs without saving the number to your phone.</string>
+    <string name="directChatInfo">This Application uses WhatsApp services to start a conversation with any number included.</string>
+    <string name="directChatInfoNote">Note: It Does not store the number, Send msgs without saving the number to your phone.</string>
 
-        <string name="privacy_text">We are committed to bringing users a better experience in all aspects and will update from time to time Terms of Use and Privacy Policy</string>
+    <string name="privacy_text">We are committed to bringing users a better experience in all aspects and will update from time to time Terms of Use and Privacy Policy</string>
 
-        <string name="menu_home">Home</string>
-        <string name="menu_gallery">Gallery</string>
-        <string name="menu_slideshow">Slideshow</string>
-        <string name="message_number_empty">Enter the number</string>
-        <string name="message_number_error">Number not correct</string>
-        <string name="enterMessage">Type message here</string>
-        <string name="ad_attribution" translatable="false">ads attribution</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="message_number_empty">Enter the number</string>
+    <string name="message_number_error">Number not correct</string>
+    <string name="enterMessage">Type message here</string>
+    <string name="ad_attribution" translatable="false">ads attribution</string>
 
     <string name="no_thanks">No thanks</string>
     <string name="video_starting_in">Video starting in</string>
 
-        <string name="Privacy_url" translatable="false">https://supertechapps.blogspot.com/2022/07/paid-privacy-policy.html</string>
+    <string name="Privacy_url" translatable="false">https://supertechapps.blogspot.com/2022/07/paid-privacy-policy.html</string>
 
-        <string name="upload" translatable="false">Upload</string>
+    <string name="upload" translatable="false">Upload</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

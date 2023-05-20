@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/orange"
             android:theme="@style/ToolbarTheme"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="@string/text_repeater"

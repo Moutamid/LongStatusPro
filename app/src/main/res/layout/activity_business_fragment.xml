@@ -64,22 +64,23 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginBottom="@dimen/_7sdp"
-            android:src="@drawable/ic_messages" />
+            app:tint="@color/orange"
+            android:src="@drawable/chat" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_8sdp"
             android:text="@string/no_chat_available"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/dark"
+            android:fontFamily="@font/poppins"
             android:letterSpacing="0.04"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold" />

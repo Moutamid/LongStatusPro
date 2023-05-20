@@ -11,7 +11,7 @@
         android:id="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/orange">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -114,8 +114,8 @@
             android:layout_height="@dimen/_25sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_7sdp"
-            android:src="@drawable/ic_mini_icon"
-            app:tint="@color/colorPrimary" />
+            android:src="@drawable/bin"
+            app:tint="@color/orange" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -123,7 +123,8 @@
             android:layout_marginBottom="@dimen/_5sdp"
             android:text="@string/no_deleted_media"
             android:gravity="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/orange"
+            android:fontFamily="@font/montserrat_alternates"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold" />
 
@@ -131,7 +132,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/deleted_media_info"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:fontFamily="@font/poppins"
             android:textSize="@dimen/_12sdp" />
 
     </LinearLayout>

@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary">
+        android:background="@color/orange">
 
         <TextView
             style="@style/Widget.AppCompat.Button.Borderless"
@@ -22,6 +22,7 @@
             android:letterSpacing="0.1"
             android:text="@string/business_status"
             android:textAllCaps="false"
+            android:fontFamily="@font/poppins"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp" />
 
@@ -34,7 +35,8 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_8sdp"
-            android:src="@drawable/ic_bussines" />
+            app:tint="@color/white"
+            android:src="@drawable/ic_icon_whatsapp" />
 
     </RelativeLayout>
 
@@ -62,14 +64,16 @@
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
             android:layout_marginBottom="@dimen/_7sdp"
-            android:src="@drawable/ic_status_down" />
+            app:tint="@color/orange"
+            android:src="@drawable/downloadsolid" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_8sdp"
             android:text="@string/no_new_status"
-            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/montserrat_alternates"
+            android:textColor="@color/orange"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold" />
 
@@ -77,14 +81,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/wa_status_info"
-            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/dark"
+            android:gravity="center"
             android:textSize="@dimen/_12sdp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/status_info_two"
-            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/dark"
             android:textSize="@dimen/_12sdp" />
 
     </LinearLayout>
@@ -93,7 +100,7 @@
         android:id="@+id/selection_view"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/orange"
         android:visibility="gone">
 
         <TextView

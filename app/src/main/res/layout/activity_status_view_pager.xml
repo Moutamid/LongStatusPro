@@ -8,12 +8,10 @@
     tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.activity.status.StatusViewPager">
 
 
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         tools:ignore="SpeakableTextPresentCheck" />
 
     <com.leinardi.android.speeddial.SpeedDialView
@@ -23,9 +21,12 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:scrollbarFadeDuration="2"
-        app:sdMainFabClosedBackgroundColor="@color/colorPrimary"
+        app:sdMainFabClosedIconColor="@color/white"
+        app:sdMainFabOpenedIconColor="@color/white"
+        app:sdExpansionMode="left"
+        app:sdMainFabClosedBackgroundColor="@color/orange"
         app:sdMainFabClosedSrc="@drawable/ic_plus"
-        app:sdMainFabOpenedBackgroundColor="@color/colorPrimary"
+        app:sdMainFabOpenedBackgroundColor="@color/orange"
         app:tint="@color/white" />
 
 </RelativeLayout>

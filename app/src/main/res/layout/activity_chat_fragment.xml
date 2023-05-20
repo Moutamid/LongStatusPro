@@ -71,7 +71,8 @@
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
             android:layout_marginBottom="@dimen/_7sdp"
-            android:src="@drawable/ic_messages" />
+            android:src="@drawable/chat"
+            app:tint="@color/orange"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,6 +80,8 @@
             android:layout_marginBottom="@dimen/_8sdp"
             android:text="@string/no_chat_available"
             android:letterSpacing="0.04"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/dark"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold" />
 

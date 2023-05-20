@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="@color/orange"
         android:theme="@style/ToolbarTheme"
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:title="@string/share"
@@ -112,8 +112,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="8dp"
-            android:src="@drawable/ic_copy"
-            app:tint="@color/colorPrimaryDark" />
+            android:src="@drawable/copy"
+            app:tint="@color/orange" />
 
         <ImageView
             android:id="@+id/mail"
@@ -138,7 +138,7 @@
             android:layout_weight="1"
             android:padding="5dp"
             android:src="@drawable/ic_share"
-            app:tint="@color/colorPrimaryDark" />
+            app:tint="@color/orange" />
 
     </LinearLayout>
 

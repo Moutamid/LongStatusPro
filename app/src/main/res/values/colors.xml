@@ -36,7 +36,9 @@
 
     <color name="back_grey">#FCFCFC</color>
     <color name="back_buttn">#F6F6F6</color>
+    <color name="back_buttn_selected">#56F8A846</color>
     <color name="orange">#F8A846</color>
+    <color name="orange_selected">#A1F8A846</color>
     <color name="yellow">#F3CF5C</color>
     <color name="dark">#525252</color>
 

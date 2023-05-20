@@ -10,7 +10,6 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:background="@color/white" />
 
     <LinearLayout
@@ -41,14 +40,16 @@
             android:layout_height="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_7sdp"
-            android:src="@drawable/ic_status_down" />
+            app:tint="@color/orange"
+            android:src="@drawable/downloadsolid" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_8sdp"
             android:text="@string/empty_saved_status"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/orange"
+            android:fontFamily="@font/montserrat_alternates"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold" />
 
@@ -56,14 +57,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/saved_status_info"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/dark"
+            android:fontFamily="@font/poppins"
             android:textSize="@dimen/_12sdp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/status_info_two"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/dark"
+            android:fontFamily="@font/poppins"
             android:textSize="@dimen/_12sdp" />
 
     </LinearLayout>
@@ -73,8 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
-        android:visibility="gone">
+        android:background="@color/orange">
 
         <TextView
             android:id="@+id/count"
@@ -82,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/_20sdp"
+            android:fontFamily="@font/poppins"
             android:text="0"
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp"

@@ -24,8 +24,8 @@
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toStartOf="@+id/textViewTitle"
             app:civ_border="true"
-            app:civ_border_color="@color/colorPrimary"
-            app:civ_border_width="0dp"
+            app:civ_border_color="@color/orange"
+            app:civ_border_width="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,10 +35,10 @@
         <View
             android:layout_width="0dp"
             android:layout_height="0.5dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/orange"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewTitle"
-            app:layout_constraintEnd_toEndOf="@+id/tvCount" />
+            app:layout_constraintEnd_toStartOf="@+id/textViewTime"
+            app:layout_constraintStart_toStartOf="@+id/textViewTitle" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewTitle"
@@ -49,6 +49,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             tools:text="Noor Taj"
+            android:fontFamily="@font/poppins"
             app:layout_constraintBottom_toTopOf="@+id/textViewContent"
             app:layout_constraintEnd_toStartOf="@+id/textViewTime"
             app:layout_constraintHorizontal_bias="0.5"
@@ -66,6 +67,7 @@
             android:textColor="@color/colorGray"
             android:textSize="12sp"
             tools:text="Hi, what are you up to?"
+            android:fontFamily="@font/poppins"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textViewTime"
             app:layout_constraintStart_toStartOf="@+id/textViewTitle"
@@ -83,6 +85,7 @@
             android:textColor="@color/white"
             android:textSize="10sp"
             android:textStyle="bold"
+            android:fontFamily="@font/poppins"
             app:layout_constraintDimensionRatio="1:1"
             tools:text="99+"
             app:layout_constraintTop_toTopOf="@id/imageViewUser"
@@ -93,23 +96,25 @@
             android:id="@+id/textViewTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            tools:text="09:56 PM"
+            android:fontFamily="@font/poppins"
             app:layout_constraintBottom_toBottomOf="@id/imageViewUser"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCount"
+            tools:text="09:56 PM" />
 
 
         <View
             android:id="@+id/viewSelected"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/colorPrimarySelected"
-            android:visibility="gone"
+            android:background="@color/back_buttn_selected"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="0dp"
-            tools:visibility="visible" />
+            tools:layout_editor_absoluteX="0dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

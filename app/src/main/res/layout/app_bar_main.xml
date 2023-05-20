@@ -1,39 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.activity.MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.LongStatusRDM.AppBarOverlay">
+        app:cardCornerRadius="8sp"
+        android:layout_margin="12sp"
+        app:cardBackgroundColor="@color/orange">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimaryDark"
-            app:title="Long Status and RDM"
-            app:popupTheme="@style/Theme.LongStatusRDM.PopupOverlay">
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.LongStatusRDM.AppBarOverlay">
 
-            <ImageView
-                android:id="@+id/about"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:src="@drawable/info_btn"
-                android:layout_gravity="end"
-                android:visibility="gone"
-                android:layout_marginEnd="@dimen/_8sdp" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/orange"
+                app:title="Long Status and RDM"
+                app:popupTheme="@style/Theme.LongStatusRDM.PopupOverlay">
 
-        </androidx.appcompat.widget.Toolbar>
+                <ImageView
+                    android:id="@+id/about"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:src="@drawable/info_btn"
+                    android:layout_gravity="end"
+                    android:visibility="gone"
+                    android:layout_marginEnd="@dimen/_8sdp" />
+
+            </androidx.appcompat.widget.Toolbar>
 
 
-    </com.google.android.material.appbar.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <include layout="@layout/content_main" />
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
