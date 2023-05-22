@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.SubscribeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15sp"
+                android:layout_height="?attr/actionBarSize">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Become Premium"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_alternates" />
+
+                <ImageButton
+                    android:id="@+id/close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="12sp"
+                    android:background="@drawable/tab_dot_default"
+                    android:padding="12sp"
+                    android:src="@drawable/round_clear"
+                    app:tint="@color/black" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get Access to Premium Tools"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:fontFamily="@font/poppins" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="6sp"
+                app:cardBackgroundColor="@color/back_buttn"
+                app:strokeWidth="1sp"
+                app:strokeColor="@color/orange"
+                android:layout_marginStart="12sp"
+                android:layout_marginEnd="12sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginBottom="12sp"
+                app:cardElevation="0sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12sp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="12sp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Weekly"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/dark"
+                                android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$6.99"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="/week"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/dark"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Recruiting weekly billing"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/dark"
+                                android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="12sp"
+                    android:orientation="vertical">
+
+                    <Button
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Subscribe" />
+
+                </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="6sp"
+                app:cardBackgroundColor="@color/back_buttn"
+                app:strokeWidth="1sp"
+                app:strokeColor="@color/orange"
+                android:layout_marginStart="12sp"
+                android:layout_marginEnd="12sp"
+                android:layout_marginBottom="12sp"
+                app:cardElevation="0sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12sp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="12sp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Monthly"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/dark"
+                                android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$5.99"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="/month"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/dark"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Recruiting monthly billing"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/dark"
+                                android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="12sp"
+                    android:orientation="vertical">
+
+                    <Button
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Subscribe" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7-days free trial"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/dark"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="6sp"
+                    app:cardBackgroundColor="@color/back_buttn"
+                    app:strokeWidth="1sp"
+                    app:strokeColor="@color/orange"
+                    android:layout_marginStart="12sp"
+                    android:layout_marginEnd="12sp"
+                    android:layout_marginTop="18sp"
+                    android:layout_marginBottom="12sp"
+                    app:cardElevation="0sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="12sp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:padding="12sp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Yearly"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/dark"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$4.99"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/poppins"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="/month"
+                                    android:fontFamily="@font/poppins"
+                                    android:textColor="@color/dark"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Billed yearly"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/dark"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:padding="12sp"
+                            android:orientation="vertical">
+
+                            <Button
+                                style="@style/Widget.Material3.Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/poppins"
+                                android:text="Subscribe" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="14-days free trial"
+                                android:fontFamily="@font/poppins"
+                                android:textColor="@color/dark"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="12sp"
+                    android:paddingEnd="12sp"
+                    android:paddingTop="8sp"
+                    android:paddingBottom="8sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:text="33% off and best value"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins"
+                    android:backgroundTint="@color/orange"
+                    android:background="@drawable/et_bg" />
+
+            </RelativeLayout>
+
+            <Button
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="12sp"
+                android:backgroundTint="@color/back_buttn"
+                android:fontFamily="@font/poppins"
+                android:text="Cancel Anytime"
+                android:textColor="@color/dark"
+                android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12sp"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:padding="12sp"
+                android:text="Term of use"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Button
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Privacy Policy"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:padding="12sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

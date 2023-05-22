@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.instructions) {
-            startActivity(new Intent(MainActivity.this, IntroActivity.class));
+            startActivity(new Intent(MainActivity.this, IntroScreenActivity.class));
             finish();
         } else if (id == R.id.long_status) {
             startActivity(new Intent(MainActivity.this, MainAppActivity.class));

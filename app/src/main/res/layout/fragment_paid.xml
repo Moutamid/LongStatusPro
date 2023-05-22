@@ -8,11 +8,72 @@
     android:orientation="vertical"
     tools:context=".ui.fragment.PaidFragment">
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/media"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8sp"
+        android:layout_margin="12sp"
+        app:cardBackgroundColor="@color/back_grey"
+        app:strokeWidth="0sp"
+        app:cardElevation="4sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12sp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="12sp"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="12sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recover_media"
+                    android:fontFamily="@font/poppins"
+                    android:drawablePadding="12sp"
+                    android:drawableRight="@drawable/round_lock_24"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recover_deleted_media"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="13sp"
+                    android:layout_marginTop="4sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:tint="@color/orange"
+                android:src="@drawable/image" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="25sp"
+        android:visibility="gone"
         android:gravity="center_vertical">
 
         <com.google.android.material.card.MaterialCardView
@@ -54,7 +115,6 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/media"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -97,6 +157,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:visibility="gone"
         android:gravity="center_vertical">
 
         <com.google.android.material.card.MaterialCardView

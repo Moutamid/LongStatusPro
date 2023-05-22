@@ -63,7 +63,7 @@ class StartActivity : AppCompatActivity() {
         progressAnimator!!.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 if (!sharedPref!!.getAppLaunch()) {
-                    startActivity(Intent(this@StartActivity, IntroActivity::class.java))
+                    startActivity(Intent(this@StartActivity, IntroScreenActivity::class.java))
                     finish()
                 } else {
                     intention()
