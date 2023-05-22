@@ -26,7 +26,7 @@ public class PaidFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_paid, container, false);
         view.findViewById(R.id.conversation).setOnClickListener(this);
-        view.findViewById(R.id.media).setOnClickListener(this);
+        // view.findViewById(R.id.media).setOnClickListener(this);
         view.findViewById(R.id.web).setOnClickListener(this);
         view.findViewById(R.id.long_status).setOnClickListener(this);
         return view;

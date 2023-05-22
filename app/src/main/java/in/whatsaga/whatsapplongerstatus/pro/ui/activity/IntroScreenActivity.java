@@ -53,8 +53,10 @@ public class IntroScreenActivity extends AppCompatActivity {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 if (position == list.size()-1){
                     loadScreen();
+                    next.setText("Done");
                 } else {
                     tablayout.setVisibility(View.VISIBLE);
+                    next.setText("Next");
                 }
             }
 

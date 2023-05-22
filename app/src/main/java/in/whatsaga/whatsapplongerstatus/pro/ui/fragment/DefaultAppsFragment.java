@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import in.whatsaga.whatsapplongerstatus.pro.R;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.ConversationActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.DeletedMediaActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.DirectActivity;
+import in.whatsaga.whatsapplongerstatus.pro.ui.activity.MainActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.SubscribeActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.WebActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.status.StatusMainActivity;
@@ -32,13 +34,20 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_default_apps, container, false);
 
+        MainActivity activity = (MainActivity) getActivity();
+
         view.findViewById(R.id.status_saver).setOnClickListener(this);
         view.findViewById(R.id.text_to_emoji).setOnClickListener(this);
         view.findViewById(R.id.text_repeat).setOnClickListener(this);
         view.findViewById(R.id.stylish).setOnClickListener(this);
         view.findViewById(R.id.direct_chat).setOnClickListener(this);
         view.findViewById(R.id.conversation).setOnClickListener(this);
-        view.findViewById(R.id.media).setOnClickListener(this);
+        view.findViewById(R.id.media).setOnClickListener(v -> {
+            if (activity != null) {
+                ViewPager viewPager = activity.findViewById(R.id.viewPager);
+                viewPager.setCurrentItem(1);
+            }
+        });
         view.findViewById(R.id.web).setOnClickListener(this);
         view.findViewById(R.id.long_status).setOnClickListener(this);
 
@@ -72,11 +81,6 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
                 break;
             case R.id.conversation:
                 startActivity(new Intent(requireContext(), ConversationActivity.class));
-                requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                break;
-
-            case R.id.media:
-                startActivity(new Intent(requireContext(), SubscribeActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
 
