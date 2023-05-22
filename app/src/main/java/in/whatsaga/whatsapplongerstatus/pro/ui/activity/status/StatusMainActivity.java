@@ -5,12 +5,17 @@ import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.storage.StorageManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -148,8 +153,12 @@ public class StatusMainActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void folderPermissionWhatsapp() {
-        folderPermissionWhatsapp = new Dialog(this, R.style.Theme_Dialog);
+        folderPermissionWhatsapp = new Dialog(this);
+        folderPermissionWhatsapp.requestWindowFeature(Window.FEATURE_NO_TITLE);
         folderPermissionWhatsapp.setContentView(R.layout.folder_permission);
+        folderPermissionWhatsapp.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        folderPermissionWhatsapp.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        folderPermissionWhatsapp.getWindow().setGravity(Gravity.CENTER);
         folderPermissionWhatsapp.findViewById(R.id.yes).setOnClickListener(v -> {
             openDirectoryForPermission();
             folderPermissionWhatsapp.dismiss();
@@ -161,8 +170,13 @@ public class StatusMainActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void folderPermissionBusiness() {
-        folderPermissionBusiness = new Dialog(this, R.style.Theme_Dialog);
+        folderPermissionBusiness = new Dialog(this);
+        folderPermissionBusiness.requestWindowFeature(Window.FEATURE_NO_TITLE);
         folderPermissionBusiness.setContentView(R.layout.folder_permission);
+        folderPermissionBusiness.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        folderPermissionBusiness.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        folderPermissionBusiness.getWindow().setGravity(Gravity.CENTER);
+
         folderPermissionBusiness.findViewById(R.id.yes).setOnClickListener(v -> {
             openDirectoryForPermissionBusiness();
             folderPermissionBusiness.dismiss();

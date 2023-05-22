@@ -49,6 +49,8 @@
             android:paddingVertical="12dp"
             android:text="@string/update"
             android:textAllCaps="false"
+            app:cornerRadius="26sp"
+            android:fontFamily="@font/poppins"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btnLater"
@@ -61,15 +63,17 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="24dp"
             android:gravity="center"
+            app:cornerRadius="26sp"
             android:paddingVertical="12dp"
             android:text="@string/later"
+            android:fontFamily="@font/poppins"
             android:textAllCaps="false"
-            android:textColor="@color/black"
+            android:textColor="@color/orange"
             app:backgroundTint="@color/white"
             app:layout_constraintEnd_toStartOf="@id/btnUpdate"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/message"
-            app:strokeColor="@color/colorPrimary"
+            app:strokeColor="@color/orange"
             app:strokeWidth="1dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
