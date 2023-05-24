@@ -44,6 +44,177 @@
                 android:gravity="center"
                 android:fontFamily="@font/poppins" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="12sp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Customer Support"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:drawableTint="@color/orange"
+                    android:drawablePadding="12sp"
+                    android:visibility="invisible"
+                    android:drawableLeft="@drawable/headsetsolid" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Premium"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/montserrat_alternates" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Basic"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12sp"
+                    android:layout_marginEnd="12sp"
+                    android:fontFamily="@font/montserrat_alternates" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Customer Support"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:drawableTint="@color/orange"
+                    android:drawablePadding="12sp"
+                    android:drawableLeft="@drawable/headsetsolid" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    app:tint="@color/orange"
+                    android:src="@drawable/round_check_24" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    app:tint="@color/orange"
+                    android:layout_marginStart="12sp"
+                    android:layout_marginEnd="12sp"
+                    android:src="@drawable/round_remove_24" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/colorGray"
+                android:layout_marginStart="100sp"
+                android:layout_marginTop="8sp"
+                android:visibility="gone"
+                android:layout_marginBottom="8sp"
+                android:layout_marginEnd="100sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Remove Ads"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:drawableTint="@color/orange"
+                    android:drawablePadding="12sp"
+                    android:drawableLeft="@drawable/rectangle_ad_solid" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    app:tint="@color/orange"
+                    android:src="@drawable/round_check_24" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:layout_marginStart="12sp"
+                    android:layout_marginEnd="12sp"
+                    app:tint="@color/orange"
+                    android:src="@drawable/round_remove_24" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="@color/colorGray"
+                android:layout_marginStart="100sp"
+                android:layout_marginTop="8sp"
+                android:layout_marginBottom="8sp"
+                android:visibility="gone"
+                android:layout_marginEnd="100sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Recover delted media files"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:drawableTint="@color/orange"
+                    android:drawablePadding="12sp"
+                    android:drawableLeft="@drawable/filmsolid" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    app:tint="@color/orange"
+                    android:src="@drawable/round_check_24" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:layout_marginStart="12sp"
+                    android:layout_marginEnd="12sp"
+                    app:tint="@color/orange"
+                    android:src="@drawable/round_remove_24" />
+
+            </LinearLayout>
+
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
