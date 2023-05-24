@@ -87,6 +87,8 @@
                                 android:id="@+id/notification"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                app:thumbTint="@color/white"
+                                app:track="@drawable/track"
                                 android:paddingHorizontal="12sp"/>
 
                         </LinearLayout>
@@ -131,6 +133,8 @@
                                 android:id="@+id/deleted_notification"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                app:thumbTint="@color/white"
+                                app:track="@drawable/track"
                                 android:paddingHorizontal="12sp"/>
 
                         </LinearLayout>
