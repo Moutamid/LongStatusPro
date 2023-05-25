@@ -15,6 +15,7 @@ import in.whatsaga.whatsapplongerstatus.pro.ui.activity.ConversationActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.DeletedMediaActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.DirectActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.MainActivity;
+import in.whatsaga.whatsapplongerstatus.pro.ui.activity.SettingsActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.SubscribeActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.WebActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.status.StatusMainActivity;
@@ -42,6 +43,7 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
         view.findViewById(R.id.stylish).setOnClickListener(this);
         view.findViewById(R.id.direct_chat).setOnClickListener(this);
         view.findViewById(R.id.conversation).setOnClickListener(this);
+        view.findViewById(R.id.setting).setOnClickListener(this);
         view.findViewById(R.id.media).setOnClickListener(v -> {
             if (activity != null) {
                 ViewPager viewPager = activity.findViewById(R.id.viewPager);
@@ -65,7 +67,10 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
                 startActivity(new Intent(requireContext(), EmojiActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
-
+            case R.id.setting:
+                startActivity(new Intent(requireContext(), SettingsActivity.class));
+                requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                break;
             case R.id.text_repeat:
                 startActivity(new Intent(requireContext(), TextRepeaterActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

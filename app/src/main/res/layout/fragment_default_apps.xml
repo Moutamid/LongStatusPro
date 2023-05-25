@@ -450,6 +450,64 @@
 
             </LinearLayout>
 
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8sp"
+                android:layout_margin="12sp"
+                app:cardBackgroundColor="@color/back_grey"
+                app:strokeWidth="0sp"
+                app:cardElevation="4sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12sp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:tint="@color/orange"
+                        android:src="@drawable/settings" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="12sp"
+                        android:gravity="center_vertical"
+                        android:layout_marginEnd="12sp"
+                        android:layout_marginStart="12sp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings"
+                            android:fontFamily="@font/poppins"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Open Settings for more options"
+                            android:fontFamily="@font/poppins"
+                            android:textSize="13sp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/black"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
