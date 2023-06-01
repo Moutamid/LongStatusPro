@@ -14,8 +14,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.fxn.stash.Stash;
 import com.google.android.ads.nativetemplates.TemplateView;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
@@ -37,6 +39,7 @@ import in.whatsaga.whatsapplongerstatus.pro.ui.activity.ConversationActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.DeletedMediaActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.DirectActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.MainActivity;
+import in.whatsaga.whatsapplongerstatus.pro.ui.activity.MediaActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.SettingsActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.SubscribeActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.WebActivity;
@@ -44,6 +47,7 @@ import in.whatsaga.whatsapplongerstatus.pro.ui.activity.status.StatusMainActivit
 import in.whatsaga.whatsapplongerstatus.pro.ui.smartkit.EmojiActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.smartkit.StylishTextActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.smartkit.TextRepeaterActivity;
+import in.whatsaga.whatsapplongerstatus.pro.utils.Constants;
 import in.whatsaga.whatsapplongerstatus.pro.whatsaga.MainAppActivity;
 
 public class DefaultAppsFragment extends Fragment implements View.OnClickListener {
@@ -68,6 +72,10 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
         Ads.showNativeAd(requireContext(), v1);
         Ads.showNativeAd(requireContext(), v2);
         Ads.showNativeAd(requireContext(), v3);
+        ImageView lock = view.findViewById(R.id.lock);
+        if (Stash.getBoolean(Constants.IS_PRO, false)){
+            lock.setVisibility(View.GONE);
+        }
 
         view.findViewById(R.id.status_saver).setOnClickListener(this);
         view.findViewById(R.id.text_to_emoji).setOnClickListener(this);
@@ -77,9 +85,15 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
         view.findViewById(R.id.conversation).setOnClickListener(this);
         view.findViewById(R.id.setting).setOnClickListener(this);
         view.findViewById(R.id.media).setOnClickListener(v -> {
-            if (activity != null) {
-                ViewPager viewPager = activity.findViewById(R.id.viewPager);
-                viewPager.setCurrentItem(1);
+            if (Stash.getBoolean(Constants.IS_PRO, false)){
+                Ads.loadIntersAD(requireContext(), requireActivity());
+                startActivity(new Intent(requireContext(), DeletedMediaActivity.class));
+                requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            } else {
+                if (activity != null) {
+                    ViewPager viewPager = activity.findViewById(R.id.viewPager);
+                    viewPager.setCurrentItem(1);
+                }
             }
         });
         view.findViewById(R.id.web).setOnClickListener(this);

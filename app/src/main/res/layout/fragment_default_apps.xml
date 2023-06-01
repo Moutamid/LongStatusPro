@@ -106,17 +106,31 @@
                         android:layout_marginEnd="12sp"
                         android:orientation="vertical">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/recover_media"
-                            android:fontFamily="@font/poppins"
-                            android:drawablePadding="12sp"
-                            android:drawableRight="@drawable/round_lock_24"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
                             android:gravity="center_vertical"
-                            android:textColor="@color/black"/>
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/recover_media"
+                                android:fontFamily="@font/poppins"
+                                android:textStyle="bold"
+                                android:textSize="16sp"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/black"/>
+
+                            <ImageView
+                                android:id="@+id/lock"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12sp"
+                                android:src="@drawable/round_lock_24" />
+
+                        </LinearLayout>
+
 
                         <TextView
                             android:layout_width="match_parent"

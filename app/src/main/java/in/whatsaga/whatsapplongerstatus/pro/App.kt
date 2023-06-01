@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
+import com.fxn.stash.Stash
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.initialization.InitializationStatus
 import `in`.whatsaga.whatsapplongerstatus.pro.persistence.Repository
@@ -25,6 +26,7 @@ class App : Application(){
     override fun onCreate() {
         super.onCreate()
         context = this
+        Stash.init(this)
 
         MobileAds.initialize(
             this
