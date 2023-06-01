@@ -20,9 +20,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.ads.nativetemplates.TemplateView;
+
 import java.io.File;
 
 import in.whatsaga.whatsapplongerstatus.pro.R;
+import in.whatsaga.whatsapplongerstatus.pro.adsense.Ads;
 import in.whatsaga.whatsapplongerstatus.pro.utils.Common;
 import khangtran.preferenceshelper.PrefHelper;
 
@@ -43,8 +46,10 @@ public class StatusMainActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status_main);
-
-
+        Ads.calledIniti(this);
+        Ads.loadIntersAD(this, this);
+        TemplateView v1 = findViewById(R.id.my_template);
+        Ads.showNativeAd(this, v1);
 
         dialog = new Dialog(this);
 

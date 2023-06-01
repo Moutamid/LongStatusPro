@@ -9,8 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.AdView
 
 import `in`.whatsaga.whatsapplongerstatus.pro.R
+import `in`.whatsaga.whatsapplongerstatus.pro.adsense.Ads
 import `in`.whatsaga.whatsapplongerstatus.pro.utils.Common
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -38,6 +40,10 @@ class StylishTextActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         Common.setLocale(this)
         setContentView(R.layout.activity_stylish_text)
+
+        var banner: AdView = findViewById(R.id.adView)
+        Ads.calledIniti(this)
+        Ads.showBannerAd(banner)
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)

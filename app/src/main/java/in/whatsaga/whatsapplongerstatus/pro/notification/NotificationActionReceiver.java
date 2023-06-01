@@ -36,7 +36,6 @@ public class NotificationActionReceiver extends BroadcastReceiver {
         return null;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onReceive(Context context, @NotNull Intent intent) {
         String action = intent.getAction();

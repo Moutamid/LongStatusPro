@@ -15,171 +15,179 @@
         app:title="@string/status_saver"
         app:titleTextColor="@color/white" />
 
-        <androidx.core.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/my_template"
+        android:fillViewport="true">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/toolbar"
-            android:fillViewport="true">
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/_12sdp"
+                android:background="@drawable/et_bg"
+                android:backgroundTint="@color/back_buttn"
+                android:fontFamily="@font/poppins"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="@dimen/_3sdp"
+                android:padding="12sp"
+                android:text="@string/note_to_save_status"
+                android:textColor="@color/dark"
+                android:textSize="17sp" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0sp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="@dimen/_12sdp"
-                    android:letterSpacing="0.03"
-                    android:fontFamily="@font/poppins"
-                    android:padding="12sp"
-                    android:background="@drawable/et_bg"
-                    android:backgroundTint="@color/back_buttn"
-                    android:textColor="@color/dark"
-                    android:lineSpacingExtra="@dimen/_3sdp"
-                    android:text="@string/note_to_save_status"
-                    android:textSize="17sp" />
+                    android:layout_marginStart="12sp"
+                    android:layout_marginEnd="6sp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/whatsapp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12sp"
+                        app:cardBackgroundColor="@color/back_buttn"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp"
+                        app:strokeWidth="0sp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="12sp">
+
+                            <ImageView
+                                android:layout_width="42sp"
+                                android:layout_height="42sp"
+                                android:src="@drawable/ic_whatsapp_mini"
+                                app:tint="@color/orange" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_horizontal"
+                        android:text="@string/whatsapp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12sp"
+                    android:layout_marginEnd="6sp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/business"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12sp"
+                        app:cardBackgroundColor="@color/back_buttn"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp"
+                        app:strokeWidth="0sp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="12sp">
+
+                            <ImageView
+                                android:layout_width="42sp"
+                                android:layout_height="42sp"
+                                android:src="@drawable/ic_icon_whatsapp"
+                                app:tint="@color/orange" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_horizontal"
+                        android:text="@string/business"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/downloads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12sp"
+                app:cardBackgroundColor="@color/back_buttn"
+                app:cardCornerRadius="16sp"
+                app:cardElevation="0sp"
+                app:strokeWidth="0sp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12sp">
 
-                    <LinearLayout
-                        android:layout_width="0sp"
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="12sp"
-                        android:layout_marginEnd="6sp"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_vertical"
+                        android:text="@string/my_status"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/whatsapp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:cardCornerRadius="12sp"
-                            android:layout_margin="12sp"
-                            app:cardBackgroundColor="@color/back_buttn"
-                            app:strokeWidth="0sp"
-                            app:cardElevation="0sp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="12sp"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="42sp"
-                                    android:layout_height="42sp"
-                                    app:tint="@color/orange"
-                                    android:src="@drawable/ic_whatsapp_mini" />
-
-                            </LinearLayout>
-
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="@string/whatsapp"
-                            android:fontFamily="@font/poppins"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0sp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="12sp"
-                        android:layout_marginEnd="6sp"
-                        android:layout_weight="1">
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/business"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:cardCornerRadius="12sp"
-                            android:layout_margin="12sp"
-                            app:cardBackgroundColor="@color/back_buttn"
-                            app:strokeWidth="0sp"
-                            app:cardElevation="0sp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="12sp"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="42sp"
-                                    android:layout_height="42sp"
-                                    app:tint="@color/orange"
-                                    android:src="@drawable/ic_icon_whatsapp" />
-
-                            </LinearLayout>
-
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="@string/business"
-                            android:fontFamily="@font/poppins"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"/>
-
-                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="42sp"
+                        android:layout_height="42sp"
+                        android:src="@drawable/downloadsolid"
+                        app:tint="@color/orange" />
 
                 </LinearLayout>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/downloads"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="16sp"
-                    android:layout_margin="12sp"
-                    app:cardBackgroundColor="@color/back_buttn"
-                    app:strokeWidth="0sp"
-                    app:cardElevation="0sp">
+            </com.google.android.material.card.MaterialCardView>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="12sp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+        </LinearLayout>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/my_status"
-                            android:fontFamily="@font/poppins"
-                            android:textSize="16sp"
-                            android:gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:textColor="@color/black"/>
+    </androidx.core.widget.NestedScrollView>
 
-                        <ImageView
-                            android:layout_width="42sp"
-                            android:layout_height="42sp"
-                            app:tint="@color/orange"
-                            android:src="@drawable/downloadsolid" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
-
-        </androidx.core.widget.NestedScrollView>
+    <com.google.android.ads.nativetemplates.TemplateView
+        android:id="@+id/my_template"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:gnt_template_type="@layout/gnt_small_template_view" />
 
 </RelativeLayout>

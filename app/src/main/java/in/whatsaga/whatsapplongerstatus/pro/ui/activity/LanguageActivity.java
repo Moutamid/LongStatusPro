@@ -11,12 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.card.MaterialCardView;
 
 import in.whatsaga.whatsapplongerstatus.pro.R;
+import in.whatsaga.whatsapplongerstatus.pro.adsense.Ads;
 import khangtran.preferenceshelper.PrefHelper;
 
-public class LanguageActivity extends AppCompatActivity  {
+public class LanguageActivity extends AppCompatActivity {
     MaterialCardView english, spanish, arabic, hindi, french, germen, portg, italian, urdu, japans, bengali, turkish, indona, russian, sweden;
     TextView englishText, spanishText, arabicText, hindiText, frenchText, germenText, portgText, italianText, urduText, japansText, bengaliText, turkishText, indonaText, russianText, swedenText;
-
 
     public static void start(Context context) {
         Intent starter = new Intent(context, LanguageActivity.class);
@@ -28,6 +28,7 @@ public class LanguageActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language);
 
+        Ads.calledIniti(this);
         // Cards
         english = findViewById(R.id.englishCard);
         spanish = findViewById(R.id.spanishCard);
@@ -124,8 +125,9 @@ public class LanguageActivity extends AppCompatActivity  {
         });
 
         findViewById(R.id.done).setOnClickListener(v -> {
-                startActivity(new Intent(LanguageActivity.this, MainActivity.class));
-                finish();
+            Ads.loadIntersAD(this, this);
+            startActivity(new Intent(LanguageActivity.this, MainActivity.class));
+            finish();
         });
 
         updatingUi();
@@ -843,8 +845,5 @@ public class LanguageActivity extends AppCompatActivity  {
 
     }
 
-
-
-   
 
 }

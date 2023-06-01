@@ -4,7 +4,8 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
-
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.initialization.InitializationStatus
 import `in`.whatsaga.whatsapplongerstatus.pro.persistence.Repository
 import `in`.whatsaga.whatsapplongerstatus.pro.utils.Common
 import `in`.whatsaga.whatsapplongerstatus.pro.utils.PrefsHelper
@@ -12,7 +13,10 @@ import `in`.whatsaga.whatsapplongerstatus.pro.utils.StorageUtils
 import khangtran.preferenceshelper.PrefHelper
 import org.jetbrains.annotations.Contract
 
-class App : Application() {
+
+class App : Application(){
+    private var appOpenManager: AppOpenManager? = null
+
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
         MultiDex.install(this)
@@ -21,6 +25,11 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         context = this
+
+        MobileAds.initialize(
+            this
+        ) { initializationStatus: InitializationStatus? -> }
+        appOpenManager = AppOpenManager(this)
 
         Common.ImageBackupfolder.mkdirs()
         PrefsHelper.init(context)

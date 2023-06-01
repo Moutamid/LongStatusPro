@@ -12,8 +12,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import androidx.appcompat.widget.Toolbar
+import com.google.android.gms.ads.AdView
 
 import `in`.whatsaga.whatsapplongerstatus.pro.R
+import `in`.whatsaga.whatsapplongerstatus.pro.adsense.Ads
 import `in`.whatsaga.whatsapplongerstatus.pro.utils.Common
 import java.util.concurrent.TimeUnit
 
@@ -32,6 +34,10 @@ class TextRepeaterActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         Common.setLocale(this)
         setContentView(R.layout.activity_text_repeater)
+
+        var banner: AdView = findViewById(R.id.adView)
+        Ads.calledIniti(this)
+        Ads.showBannerAd(banner)
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)

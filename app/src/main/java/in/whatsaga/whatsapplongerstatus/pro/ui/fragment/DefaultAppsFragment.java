@@ -1,16 +1,38 @@
 package in.whatsaga.whatsapplongerstatus.pro.ui.fragment;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.google.android.ads.nativetemplates.TemplateView;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.OnUserEarnedRewardListener;
+import com.google.android.gms.ads.RequestConfiguration;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAd;
+import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoadCallback;
+
+import java.util.Arrays;
+import java.util.List;
 
 import in.whatsaga.whatsapplongerstatus.pro.R;
+import in.whatsaga.whatsapplongerstatus.pro.adsense.Ads;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.ConversationActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.DeletedMediaActivity;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.DirectActivity;
@@ -37,6 +59,16 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
 
         MainActivity activity = (MainActivity) getActivity();
 
+        Ads.calledIniti(requireContext());
+        TemplateView v1, v2, v3;
+        v1 = view.findViewById(R.id.my_template);
+        v2 = view.findViewById(R.id.my_template2);
+        v3 = view.findViewById(R.id.my_template3);
+
+        Ads.showNativeAd(requireContext(), v1);
+        Ads.showNativeAd(requireContext(), v2);
+        Ads.showNativeAd(requireContext(), v3);
+
         view.findViewById(R.id.status_saver).setOnClickListener(this);
         view.findViewById(R.id.text_to_emoji).setOnClickListener(this);
         view.findViewById(R.id.text_repeat).setOnClickListener(this);
@@ -60,36 +92,44 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.status_saver:
+                Ads.loadIntersAD(requireContext(), requireActivity());
                 startActivity(new Intent(requireContext(), StatusMainActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.text_to_emoji:
+                Ads.loadIntersAD(requireContext(), requireActivity());
                 startActivity(new Intent(requireContext(), EmojiActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.setting:
+                Ads.loadIntersAD(requireContext(), requireActivity());
                 startActivity(new Intent(requireContext(), SettingsActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.text_repeat:
+                Ads.loadIntersAD(requireContext(), requireActivity());
                 startActivity(new Intent(requireContext(), TextRepeaterActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
 
             case R.id.stylish:
+                Ads.loadIntersAD(requireContext(), requireActivity());
                 startActivity(new Intent(requireContext(), StylishTextActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.direct_chat:
+                Ads.loadIntersAD(requireContext(), requireActivity());
                 startActivity(new Intent(requireContext(), DirectActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.conversation:
+                Ads.loadIntersAD(requireContext(), requireActivity());
                 startActivity(new Intent(requireContext(), ConversationActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
 
             case R.id.web:
+                Ads.loadIntersAD(requireContext(), requireActivity());
                 startActivity(new Intent(requireContext(), WebActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;

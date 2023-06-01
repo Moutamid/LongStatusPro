@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import in.whatsaga.whatsapplongerstatus.pro.R;
+import in.whatsaga.whatsapplongerstatus.pro.adsense.Ads;
 import in.whatsaga.whatsapplongerstatus.pro.models.AppStatusModel;
 import in.whatsaga.whatsapplongerstatus.pro.services.NLService;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.status.StatusMainActivity;
@@ -58,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         Constants.checkApp(this);
+
+        Ads.calledIniti(this);
 
         //     getAppStatus();
 
