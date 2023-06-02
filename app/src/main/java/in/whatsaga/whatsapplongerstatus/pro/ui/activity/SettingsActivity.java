@@ -31,6 +31,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
 import in.whatsaga.whatsapplongerstatus.pro.R;
+import in.whatsaga.whatsapplongerstatus.pro.adsense.Ads;
 import in.whatsaga.whatsapplongerstatus.pro.utils.Common;
 import in.whatsaga.whatsapplongerstatus.pro.utils.SharedPref;
 
@@ -222,9 +223,10 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onBackPressed() {
-
-        startActivity(new Intent(SettingsActivity.this, MainActivity.class));
-        finish();
+        Ads.loadIntersAD(
+                this, this,
+                MainActivity.class
+        );
     }
 
 

@@ -1,21 +1,22 @@
 package `in`.whatsaga.whatsapplongerstatus.pro.ui.smartkit
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdView
-
 import `in`.whatsaga.whatsapplongerstatus.pro.R
 import `in`.whatsaga.whatsapplongerstatus.pro.adsense.Ads
+import `in`.whatsaga.whatsapplongerstatus.pro.ui.activity.ConversationActivity
+import `in`.whatsaga.whatsapplongerstatus.pro.ui.activity.MainActivity
 import `in`.whatsaga.whatsapplongerstatus.pro.utils.Common
 import java.util.*
-import java.util.concurrent.TimeUnit
+
 
 class StylishTextActivity : AppCompatActivity(), View.OnClickListener {
     var ed_text: EditText? = null
@@ -166,7 +167,9 @@ class StylishTextActivity : AppCompatActivity(), View.OnClickListener {
 
 
     override fun onBackPressed() {
-
-        super.onBackPressed()
+        Ads.loadIntersAD(
+            this, this,
+            MainActivity::class.java
+        )
     }
 }

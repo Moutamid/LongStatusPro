@@ -26,6 +26,7 @@ import java.io.File;
 
 import in.whatsaga.whatsapplongerstatus.pro.R;
 import in.whatsaga.whatsapplongerstatus.pro.adsense.Ads;
+import in.whatsaga.whatsapplongerstatus.pro.ui.activity.ConversationActivity;
 import in.whatsaga.whatsapplongerstatus.pro.utils.Common;
 import khangtran.preferenceshelper.PrefHelper;
 
@@ -47,7 +48,7 @@ public class StatusMainActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status_main);
         Ads.calledIniti(this);
-        Ads.loadIntersAD(this, this);
+
         TemplateView v1 = findViewById(R.id.my_template);
         Ads.showNativeAd(this, v1);
 
@@ -73,27 +74,19 @@ public class StatusMainActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.downloads:
-
-
-                    startActivity(new Intent(StatusMainActivity.this, DownloadsActivity.class));
-
-
-
+                Ads.loadIntersAD(StatusMainActivity.this, StatusMainActivity.this, DownloadsActivity.class);
                 break;
 
             case R.id.whatsapp:
-
                     if (Common.isRorAbove()) {
                         if (!PrefHelper.getBooleanVal("Permission")) {
                             folderPermissionWhatsapp.show();
                         } else {
-                            startActivity(new Intent(StatusMainActivity.this, WhatsappActivity.class));
+                            Ads.loadIntersAD(StatusMainActivity.this, StatusMainActivity.this, WhatsappActivity.class);
                         }
                     } else {
-                        startActivity(new Intent(StatusMainActivity.this, WhatsappActivity.class));
+                        Ads.loadIntersAD(StatusMainActivity.this, StatusMainActivity.this, WhatsappActivity.class);
                     }
-
-
 
                 break;
 
@@ -233,7 +226,6 @@ public class StatusMainActivity extends AppCompatActivity implements View.OnClic
 
 
     public void onBackPressed() {
-
         super.onBackPressed();
     }
 

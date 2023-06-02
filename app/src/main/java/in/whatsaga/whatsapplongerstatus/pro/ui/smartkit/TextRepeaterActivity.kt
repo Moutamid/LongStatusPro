@@ -16,6 +16,7 @@ import com.google.android.gms.ads.AdView
 
 import `in`.whatsaga.whatsapplongerstatus.pro.R
 import `in`.whatsaga.whatsapplongerstatus.pro.adsense.Ads
+import `in`.whatsaga.whatsapplongerstatus.pro.ui.activity.MainActivity
 import `in`.whatsaga.whatsapplongerstatus.pro.utils.Common
 import java.util.concurrent.TimeUnit
 
@@ -131,7 +132,9 @@ class TextRepeaterActivity : AppCompatActivity(), View.OnClickListener {
 
 
     override fun onBackPressed() {
-
-        super.onBackPressed()
+        Ads.loadIntersAD(
+            this, this,
+            MainActivity::class.java
+        )
     }
 }

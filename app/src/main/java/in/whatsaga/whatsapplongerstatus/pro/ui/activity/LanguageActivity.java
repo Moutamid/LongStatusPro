@@ -125,9 +125,7 @@ public class LanguageActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.done).setOnClickListener(v -> {
-            Ads.loadIntersAD(this, this);
-            startActivity(new Intent(LanguageActivity.this, MainActivity.class));
-            finish();
+            Ads.loadIntersAD(this, this, MainActivity.class);
         });
 
         updatingUi();

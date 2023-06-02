@@ -3,7 +3,10 @@ package in.whatsaga.whatsapplongerstatus.pro.adsense;
 import static android.content.ContentValues.TAG;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -14,6 +17,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
@@ -22,6 +26,7 @@ import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.gms.ads.nativead.NativeAdOptions;
 
 import in.whatsaga.whatsapplongerstatus.pro.R;
+import in.whatsaga.whatsapplongerstatus.pro.ui.activity.SettingsActivity;
 
 public class Ads {
     private static InterstitialAd mInterstitialAd;
@@ -37,7 +42,13 @@ public class Ads {
         mAdView.loadAd(adRequest);
     }
 
-    public static void loadIntersAD(Context context, Activity activity) {
+    public static void loadIntersAD(Context context, Activity activity, Class intent) {
+
+        ProgressDialog dialog = new ProgressDialog(context);
+        dialog.setCancelable(false);
+        dialog.setMessage("Ad is loading");
+        dialog.show();
+
         InterstitialAd.load(context, context.getString(R.string.Interstial_ID), adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
@@ -48,9 +59,20 @@ public class Ads {
                         Log.i(TAG, "onAdLoaded");
                         if (mInterstitialAd != null) {
                             mInterstitialAd.show(activity);
+                            dialog.dismiss();
                         } else {
                             Log.d("TAG", "The interstitial ad wasn't ready yet.");
                         }
+
+                        interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                            @Override
+                            public void onAdDismissedFullScreenContent() {
+                                super.onAdDismissedFullScreenContent();
+                                context.startActivity(new Intent(context, intent));
+                                activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                            }
+                        });
+
                     }
 
                     @Override
@@ -58,6 +80,7 @@ public class Ads {
                         // Handle the error
                         Log.d(TAG, loadAdError.toString());
                         mInterstitialAd = null;
+                        dialog.dismiss();
                     }
                 });
     }

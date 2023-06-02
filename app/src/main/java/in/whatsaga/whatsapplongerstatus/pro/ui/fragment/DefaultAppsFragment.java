@@ -86,9 +86,7 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
         view.findViewById(R.id.setting).setOnClickListener(this);
         view.findViewById(R.id.media).setOnClickListener(v -> {
             if (Stash.getBoolean(Constants.IS_PRO, false)){
-                Ads.loadIntersAD(requireContext(), requireActivity());
-                startActivity(new Intent(requireContext(), DeletedMediaActivity.class));
-                requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                Ads.loadIntersAD(requireContext(), requireActivity(), DeletedMediaActivity.class);
             } else {
                 if (activity != null) {
                     ViewPager viewPager = activity.findViewById(R.id.viewPager);
@@ -106,46 +104,33 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.status_saver:
-                Ads.loadIntersAD(requireContext(), requireActivity());
-                startActivity(new Intent(requireContext(), StatusMainActivity.class));
+                requireContext().startActivity(new Intent(requireContext(), StatusMainActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.text_to_emoji:
-                Ads.loadIntersAD(requireContext(), requireActivity());
-                startActivity(new Intent(requireContext(), EmojiActivity.class));
+                requireContext().startActivity(new Intent(requireContext(), EmojiActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.setting:
-                Ads.loadIntersAD(requireContext(), requireActivity());
-                startActivity(new Intent(requireContext(), SettingsActivity.class));
+                requireContext().startActivity(new Intent(requireContext(), SettingsActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.text_repeat:
-                Ads.loadIntersAD(requireContext(), requireActivity());
-                startActivity(new Intent(requireContext(), TextRepeaterActivity.class));
+                requireContext().startActivity(new Intent(requireContext(), TextRepeaterActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
-
             case R.id.stylish:
-                Ads.loadIntersAD(requireContext(), requireActivity());
-                startActivity(new Intent(requireContext(), StylishTextActivity.class));
+                requireContext().startActivity(new Intent(requireContext(), StylishTextActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.direct_chat:
-                Ads.loadIntersAD(requireContext(), requireActivity());
-                startActivity(new Intent(requireContext(), DirectActivity.class));
-                requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                Ads.loadIntersAD(requireContext(), requireActivity(), DirectActivity.class);
                 break;
             case R.id.conversation:
-                Ads.loadIntersAD(requireContext(), requireActivity());
-                startActivity(new Intent(requireContext(), ConversationActivity.class));
-                requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                Ads.loadIntersAD(requireContext(), requireActivity(), ConversationActivity.class);
                 break;
-
             case R.id.web:
-                Ads.loadIntersAD(requireContext(), requireActivity());
-                startActivity(new Intent(requireContext(), WebActivity.class));
-                requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                Ads.loadIntersAD(requireContext(), requireActivity(), WebActivity.class);
                 break;
 
             case R.id.long_status:
