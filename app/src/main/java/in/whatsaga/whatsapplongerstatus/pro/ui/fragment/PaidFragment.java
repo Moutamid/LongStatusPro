@@ -1,6 +1,5 @@
 package in.whatsaga.whatsapplongerstatus.pro.ui.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
@@ -19,11 +17,7 @@ import com.anjlab.android.iab.v3.PurchaseInfo;
 import com.fxn.stash.Stash;
 
 import in.whatsaga.whatsapplongerstatus.pro.R;
-import in.whatsaga.whatsapplongerstatus.pro.ui.activity.ConversationActivity;
-import in.whatsaga.whatsapplongerstatus.pro.ui.activity.DeletedMediaActivity;
-import in.whatsaga.whatsapplongerstatus.pro.ui.activity.WebActivity;
 import in.whatsaga.whatsapplongerstatus.pro.utils.Constants;
-import in.whatsaga.whatsapplongerstatus.pro.whatsaga.MainAppActivity;
 
 public class PaidFragment extends Fragment implements BillingProcessor.IBillingHandler {
     BillingProcessor bp;
@@ -57,15 +51,15 @@ public class PaidFragment extends Fragment implements BillingProcessor.IBillingH
         }
 
         yearlySUB.setOnClickListener(v -> {
-            bp.purchase(requireActivity(), Constants.TWO_FORTY_SIX_DOLLAR_PRODUCT);
+            bp.purchase(requireActivity(), Constants.YEARLY_IN_WHATSAGA_WHATSAPPLONGERSTATUS_PRO);
         });
 
         monthlySUB.setOnClickListener(v -> {
-            bp.purchase(requireActivity(), Constants.TWO_TWENTY_FIVE_DOLLAR_PRODUCT);
+            bp.purchase(requireActivity(), Constants.MONTHLY_IN_WHATSAGA_WHATSAPPLONGERSTATUS_PRO);
         });
 
         weeklySUb.setOnClickListener(v -> {
-            bp.purchase(requireActivity(), Constants.TWO_HUNDRED_DOLLAR_PRODUCT);
+            bp.purchase(requireActivity(), Constants.WEEKLY_IN_WHATSAGA_WHATSAPPLONGERSTATUS_PRO);
         });
 
         bp = BillingProcessor.newBillingProcessor(requireContext(), Constants.LICENSE_KEY, this);
@@ -78,19 +72,19 @@ public class PaidFragment extends Fragment implements BillingProcessor.IBillingH
     public void onProductPurchased(@NonNull String productId, @Nullable PurchaseInfo details) {
         Toast.makeText(requireContext(), "Purchase successful", Toast.LENGTH_SHORT).show();
 
-        if (productId.equals(Constants.TWO_HUNDRED_DOLLAR_PRODUCT)){
+        if (productId.equals(Constants.WEEKLY_IN_WHATSAGA_WHATSAPPLONGERSTATUS_PRO)){
             weeklySUb.setText("Subscribed");
             weeklySUb.setEnabled(false);
             Stash.put(Constants.PRO, Constants.WEEKLY);
         }
 
-        if (productId.equals(Constants.TWO_TWENTY_FIVE_DOLLAR_PRODUCT)){
+        if (productId.equals(Constants.MONTHLY_IN_WHATSAGA_WHATSAPPLONGERSTATUS_PRO)){
             monthlySUB.setText("Subscribed");
             monthlySUB.setEnabled(false);
             Stash.put(Constants.PRO, Constants.MONTHLY);
         }
 
-        if (productId.equals(Constants.TWO_FORTY_SIX_DOLLAR_PRODUCT)){
+        if (productId.equals(Constants.YEARLY_IN_WHATSAGA_WHATSAPPLONGERSTATUS_PRO)){
             yearlySUB.setText("Subscribed");
             yearlySUB.setEnabled(false);
             Stash.put(Constants.PRO, Constants.YEARLY);
