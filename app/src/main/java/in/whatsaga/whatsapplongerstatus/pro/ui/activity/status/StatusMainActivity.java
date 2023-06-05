@@ -54,9 +54,6 @@ public class StatusMainActivity extends AppCompatActivity implements View.OnClic
 
         dialog = new Dialog(this);
 
-
-
-
         folderPermissionWhatsapp();
         folderPermissionBusiness();
 

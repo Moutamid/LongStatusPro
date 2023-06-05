@@ -122,7 +122,7 @@
         <RelativeLayout
             android:id="@+id/center_lay"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toTopOf="@+id/viewReply"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -152,7 +152,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/center_lay"
             tools:visibility="visible">
 
             <androidx.appcompat.widget.AppCompatEditText

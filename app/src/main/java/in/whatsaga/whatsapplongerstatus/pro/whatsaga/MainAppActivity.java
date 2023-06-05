@@ -32,6 +32,9 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.OnUserEarnedRewardListener;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAd;
 import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoadCallback;
 
@@ -42,6 +45,7 @@ import java.util.List;
 import droidninja.filepicker.FilePickerBuilder;
 import droidninja.filepicker.FilePickerConst;
 import in.whatsaga.whatsapplongerstatus.pro.R;
+import in.whatsaga.whatsapplongerstatus.pro.adsense.Ads;
 import in.whatsaga.whatsapplongerstatus.pro.ui.activity.MainActivity;
 
 
@@ -52,8 +56,9 @@ public class MainAppActivity extends AppCompatActivity implements View.OnClickLi
     public static int REQUEST_DOWNLOADS = 4;
     private ArrayList<String> videoPaths = new ArrayList<>();
     public static int REQUEST_FILES = 5;
-
-
+    private RewardedAd rewardedAd;
+    private final String TAG = "MainAppActivity1233";
+    AdRequest adRequest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +68,10 @@ public class MainAppActivity extends AppCompatActivity implements View.OnClickLi
         setSupportActionBar(toolbar);
         Common.mkDirs();
 
-        showRewardAd();
+        adRequest = new AdRequest.Builder().build();
+        Ads.calledIniti(this);
+        loadAd();
+        // showRewardAd();
         findViewById(R.id.upload).setOnClickListener(this);
         findViewById(R.id.settings).setOnClickListener(this);
 
@@ -97,25 +105,32 @@ public class MainAppActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void loadAd() {
-        RewardedInterstitialAd.load(this, getString(R.string.Reward_ID),
-                new AdRequest.Builder().build(),  new RewardedInterstitialAdLoadCallback() {
+        RewardedAd.load(this, getResources().getString(R.string.Reward_ID),
+                adRequest, new RewardedAdLoadCallback() {
                     @Override
-                    public void onAdLoaded(RewardedInterstitialAd ad) {
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error.
+                        Log.d(TAG, "Error : " +  loadAdError.toString());
+                        rewardedAd = null;
+                    }
+
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd ad) {
+                        rewardedAd = ad;
                         Log.d(TAG, "Ad was loaded.");
-                        rewardedInterstitialAd = ad;
+                        ServerSideVerificationOptions options = new ServerSideVerificationOptions
+                                .Builder()
+                                .setCustomData("SAMPLE_CUSTOM_DATA_STRING")
+                                .build();
+                        rewardedAd.setServerSideVerificationOptions(options);
                         showAd();
                     }
-                    @Override
-                    public void onAdFailedToLoad(LoadAdError loadAdError) {
-                        Log.d(TAG, loadAdError.toString());
-                        Toast.makeText(MainAppActivity.this, "Ad Load Failed", Toast.LENGTH_SHORT).show();
-                        rewardedInterstitialAd = null;
-                    }
                 });
+
     }
 
     private void showAd() {
-        rewardedInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+        rewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
             @Override
             public void onAdClicked() {
                 // Called when a click is recorded for an ad.
@@ -127,14 +142,14 @@ public class MainAppActivity extends AppCompatActivity implements View.OnClickLi
                 // Called when ad is dismissed.
                 // Set the ad reference to null so you don't show the ad a second time.
                 Log.d(TAG, "Ad dismissed fullscreen content.");
-                rewardedInterstitialAd = null;
+                rewardedAd = null;
             }
 
             @Override
             public void onAdFailedToShowFullScreenContent(AdError adError) {
                 // Called when ad fails to show.
                 Log.e(TAG, "Ad failed to show fullscreen content.");
-                rewardedInterstitialAd = null;
+                rewardedAd = null;
             }
 
             @Override
@@ -150,12 +165,20 @@ public class MainAppActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        rewardedInterstitialAd.show(this, new OnUserEarnedRewardListener() {
-            @Override
-            public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                Log.i(TAG, "User earned reward.");
-            }
-        });
+        if (rewardedAd != null) {
+            Activity activityContext = MainAppActivity.this;
+            rewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+                @Override
+                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+                    // Handle the reward.
+                    Log.d(TAG, "The user earned the reward.");
+                    int rewardAmount = rewardItem.getAmount();
+                    String rewardType = rewardItem.getType();
+                }
+            });
+        } else {
+            Log.d(TAG, "The rewarded ad wasn't ready yet.");
+        }
     }
 
     @Override
