@@ -43,7 +43,7 @@ class StartActivity : AppCompatActivity() {
         sharedPref = SharedPref(this)
         progressBar = findViewById<View>(R.id.progress) as ProgressBar
         progressAnimator = ObjectAnimator.ofInt(progressBar, "progress", 0, 100)
-        progressAnimator!!.setDuration(2500)
+        progressAnimator!!.setDuration(4500)
         progressAnimator!!.setInterpolator(LinearInterpolator())
         progressAnimator!!.start()
         //        if (!isAdShown) {
