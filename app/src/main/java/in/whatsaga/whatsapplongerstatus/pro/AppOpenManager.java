@@ -162,7 +162,7 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
 
     @Override
     public void onActivityStarted(Activity activity) {
-        currentActivity = activity;
+       // currentActivity = activity;
     }
 
     @Override
