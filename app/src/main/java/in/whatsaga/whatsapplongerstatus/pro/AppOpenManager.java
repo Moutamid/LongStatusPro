@@ -12,6 +12,7 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ProcessLifecycleOwner;
 
+import com.fxn.stash.Stash;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
@@ -84,7 +85,10 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
      */
     @OnLifecycleEvent(ON_START)
     public void onStart() {
-        showAdIfAvailable();
+        if (Stash.getBoolean("STARTCHECK")){
+            showAdIfAvailable();
+        }
+
         Log.d(LOG_TAG, "onStart");
     }
 
@@ -162,12 +166,16 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
 
     @Override
     public void onActivityStarted(Activity activity) {
-       // currentActivity = activity;
+       if (Stash.getBoolean("STARTCHECK")){
+           currentActivity = activity;
+       }
     }
 
     @Override
     public void onActivityResumed(Activity activity) {
-        currentActivity = activity;
+        if (Stash.getBoolean("STARTCHECK")){
+            currentActivity = activity;
+        }
     }
 
     @Override

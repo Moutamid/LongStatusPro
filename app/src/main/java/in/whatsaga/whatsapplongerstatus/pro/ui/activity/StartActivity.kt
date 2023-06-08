@@ -19,6 +19,7 @@ import android.view.animation.LinearInterpolator
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.fxn.stash.Stash
 import `in`.whatsaga.whatsapplongerstatus.pro.R
 import `in`.whatsaga.whatsapplongerstatus.pro.utils.Common
 import `in`.whatsaga.whatsapplongerstatus.pro.utils.Constants
@@ -136,6 +137,7 @@ class StartActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        Stash.put("STARTCHECK", false);
 
 //        Bundle extras = getIntent().getExtras();
 //        progressBar = (ProgressBar) findViewById(R.id.progress);
@@ -173,7 +175,9 @@ class StartActivity : AppCompatActivity() {
 //            startActivity(intent);
 //            finishAffinity();
 //        }
-    } //    private void visibleViews() {
+    }
+
+    //    private void visibleViews() {
 
     //        isAdShown = true;
     //        spinKitView.setVisibility(View.GONE);
@@ -206,4 +210,21 @@ class StartActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+        Stash.put("STARTCHECK", false);
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Stash.put("STARTCHECK", true);
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Stash.put("STARTCHECK", true);
+    }
+
+
 }
