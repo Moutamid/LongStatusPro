@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layoutDirection="ltr"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.activity.MainActivity"
+    tools:context="in.whatsaga.whatsapplongerstatus.status.uploader.ui.activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
     <com.google.android.material.tabs.TabLayout

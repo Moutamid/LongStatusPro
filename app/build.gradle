@@ -7,7 +7,7 @@ plugins {
     id 'com.google.firebase.crashlytics'
 }
 android {
-    namespace 'in.whatsaga.whatsapplongerstatus.pro'
+    namespace 'in.whatsaga.whatsapplongerstatus.status.uploader'
     compileSdk 33
 
     lint {
@@ -15,7 +15,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "in.whatsaga.whatsapplongerstatus.pro"
+        applicationId "in.whatsaga.whatsapplongerstatus.status.uploader"
         minSdk 24
         targetSdk 33
         versionCode 4

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/back_grey"
-    tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.activity.AllPermissionsActivity">
+    tools:context="in.whatsaga.whatsapplongerstatus.status.ui.activity.AllPermissionsActivity">
 
 
     <androidx.core.widget.NestedScrollView

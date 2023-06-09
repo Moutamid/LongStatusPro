@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.smartkit.TextRepeaterActivity">
+    tools:context="in.whatsaga.whatsapplongerstatus.status.ui.smartkit.TextRepeaterActivity">
 
     <RelativeLayout
         android:id="@+id/top"

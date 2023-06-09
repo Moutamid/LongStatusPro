@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.activity.MainActivity">
+    tools:context="in.whatsaga.whatsapplongerstatus.status.uploader.ui.activity.MainActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

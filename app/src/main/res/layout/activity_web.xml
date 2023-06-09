@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.activity.WebActivity">
+    tools:context="in.whatsaga.whatsapplongerstatus.status.uploader.ui.activity.WebActivity">
 
     <ProgressBar
         android:id="@+id/progressBar"

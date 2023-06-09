@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.activity.status.DownloadsActivity">
+    tools:context="in.whatsaga.whatsapplongerstatus.status.ui.activity.status.DownloadsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

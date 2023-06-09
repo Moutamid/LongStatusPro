@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/back_buttn"
     android:orientation="vertical"
-    tools:context=".ui.fragment.PaidFragment">
+    tools:context=".uploader.ui.fragment.PaidFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

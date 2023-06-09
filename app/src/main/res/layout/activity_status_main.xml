@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
-    tools:context="in.whatsaga.whatsapplongerstatus.pro.ui.activity.status.StatusMainActivity">
+    tools:context="in.whatsaga.whatsapplongerstatus.status.uploader.ui.activity.status.StatusMainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

@@ -1048,9 +1048,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:890062472575:android:bf63e3398342ae8904464a",
+        "mobilesdk_app_id": "1:890062472575:android:ef97682089712cd104464a",
         "android_client_info": {
-          "package_name": "in.whatsaga.whatsapplongerstatus.pro"
+          "package_name": "in.whatsaga.whatsapplongerstatus.status.uploader"
         }
       },
       "oauth_client": [

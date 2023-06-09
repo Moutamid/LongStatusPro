@@ -7,7 +7,7 @@
 
         <variable
             name="adapter"
-            type="in.whatsaga.whatsapplongerstatus.pro.adapters.DetailMessageAdapter" />
+            type="in.whatsaga.whatsapplongerstatus.status.uploader.adapters.DetailMessageAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
