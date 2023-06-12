@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Watch a Ad"
+            android:text="Watch the video ad to upload long full status or become a premium user to remove ads"
             android:gravity="center"
             android:fontFamily="@font/poppins"
             android:padding="12sp"
