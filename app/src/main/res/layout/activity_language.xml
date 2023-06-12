@@ -110,42 +110,6 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/arabicCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="6sp"
-                    android:layout_margin="10sp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardElevation="4sp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="12sp"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="@dimen/_33sdp"
-                            android:layout_height="@dimen/_33sdp"
-                            android:src="@drawable/arabic" />
-
-                        <TextView
-                            android:id="@+id/arabicText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:fontFamily="@font/poppins"
-                            android:text="Arabic"
-                            android:layout_marginTop="10sp"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
 
@@ -220,6 +184,50 @@
                             android:gravity="center_horizontal"
                             android:fontFamily="@font/poppins"
                             android:text="French"
+                            android:layout_marginTop="10sp"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/arabicCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="6sp"
+                    android:layout_margin="10sp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="4sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="12sp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_33sdp"
+                            android:layout_height="@dimen/_33sdp"
+                            android:src="@drawable/arabic" />
+
+                        <TextView
+                            android:id="@+id/arabicText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:fontFamily="@font/poppins"
+                            android:text="Arabic"
                             android:layout_marginTop="10sp"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
@@ -346,43 +354,6 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/urduCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="6sp"
-                    android:layout_margin="10sp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardElevation="4sp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="12sp"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="@dimen/_33sdp"
-                            android:layout_height="@dimen/_33sdp"
-                            android:src="@drawable/pakistan" />
-
-                        <TextView
-                            android:id="@+id/urduText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:fontFamily="@font/poppins"
-                            android:text="Urdu"
-                            android:layout_marginTop="10sp"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
             </LinearLayout>
 
             <LinearLayout
@@ -456,6 +427,50 @@
                             android:gravity="center_horizontal"
                             android:fontFamily="@font/poppins"
                             android:text="Bengali"
+                            android:layout_marginTop="10sp"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/urduCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="6sp"
+                    android:layout_margin="10sp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="4sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="12sp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_33sdp"
+                            android:layout_height="@dimen/_33sdp"
+                            android:src="@drawable/pakistan" />
+
+                        <TextView
+                            android:id="@+id/urduText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:fontFamily="@font/poppins"
+                            android:text="Urdu"
                             android:layout_marginTop="10sp"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
@@ -582,44 +597,44 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/swedenCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="6sp"
-                    android:layout_margin="10sp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardElevation="4sp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="12sp"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="@dimen/_33sdp"
-                            android:layout_height="@dimen/_33sdp"
-                            android:src="@drawable/sweden" />
-
-                        <TextView
-                            android:id="@+id/swedenText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:fontFamily="@font/poppins"
-                            android:text="Sweden"
-                            android:layout_marginTop="10sp"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
             </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/swedenCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="6sp"
+                android:layout_margin="10sp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="4sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12sp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_33sdp"
+                        android:layout_height="@dimen/_33sdp"
+                        android:src="@drawable/sweden" />
+
+                    <TextView
+                        android:id="@+id/swedenText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:fontFamily="@font/poppins"
+                        android:text="Sweden"
+                        android:layout_marginTop="10sp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 

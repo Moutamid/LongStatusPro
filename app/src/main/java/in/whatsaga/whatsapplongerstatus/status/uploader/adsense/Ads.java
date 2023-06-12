@@ -78,6 +78,8 @@ public class Ads {
                         // Handle the error
                         Log.d(TAG, loadAdError.toString());
                         mInterstitialAd = null;
+                        context.startActivity(new Intent(context, intent));
+                        activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         dialog.dismiss();
                     }
                 });

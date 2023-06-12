@@ -1,6 +1,9 @@
 package in.whatsaga.whatsapplongerstatus.status.uploader.ui.fragment;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,13 +15,25 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.PurchaseInfo;
 import com.anjlab.android.iab.v3.SkuDetails;
 import com.fxn.stash.Stash;
 import com.google.android.ads.nativetemplates.TemplateView;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.OnUserEarnedRewardListener;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.gms.ads.rewarded.ServerSideVerificationOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +55,9 @@ import in.whatsaga.whatsapplongerstatus.status.uploader.whatsaga.MainAppActivity
 
 public class DefaultAppsFragment extends Fragment implements View.OnClickListener, BillingProcessor.IBillingHandler {
     BillingProcessor bp;
+    AdRequest adRequest;
+    private RewardedAd rewardedAd;
+    private final String TAG = "RewardAd";
 
     public DefaultAppsFragment() {
         // Required empty public constructor
@@ -55,6 +73,7 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
         bp.initialize();
 
         Ads.calledIniti(requireContext());
+        adRequest = new AdRequest.Builder().build();
         TemplateView v1, v2, v3;
         v1 = view.findViewById(R.id.my_template);
         v2 = view.findViewById(R.id.my_template2);
@@ -72,10 +91,10 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
             @Override
             public void onSkuDetailsResponse(@Nullable List<SkuDetails> products) {
                 Log.d("PURSS", "Size : " + products.size());
-                for (int i = 0; i < products.size(); i++){
+                for (int i = 0; i < products.size(); i++) {
                     boolean isSub = products.get(i).isSubscription;
                     Stash.put(Constants.IS_PRO, isSub);
-                    if (Stash.getBoolean(Constants.IS_PRO, false)){
+                    if (Stash.getBoolean(Constants.IS_PRO, false)) {
                         lock.setVisibility(View.GONE);
                     }
                 }
@@ -87,7 +106,7 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
             }
         });
 
-        if (Stash.getBoolean(Constants.IS_PRO, false)){
+        if (Stash.getBoolean(Constants.IS_PRO, false)) {
             lock.setVisibility(View.GONE);
         }
 
@@ -148,9 +167,111 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
                 break;
 
             case R.id.long_status:
+                showAdDialog();
+                break;
+        }
+    }
+
+    private void showAdDialog() {
+        Dialog dialog = new Dialog(requireContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.show_ad);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.setCancelable(true);
+        dialog.show();
+
+        Button watch = dialog.findViewById(R.id.watch);
+        Button cancel = dialog.findViewById(R.id.cancel);
+
+        cancel.setOnClickListener(v -> {
+            dialog.dismiss();
+        });
+
+        watch.setOnClickListener(v -> {
+            dialog.dismiss();
+            loadAd();
+        });
+
+    }
+
+    private void loadAd() {
+        RewardedAd.load(requireContext(), getResources().getString(R.string.Reward_ID),
+                adRequest, new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error.
+                        Log.d(TAG, "Error : " + loadAdError.toString());
+                        rewardedAd = null;
+                        Toast.makeText(requireContext(), "Ad load failed", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(requireContext(), MainAppActivity.class));
+                        requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    }
+
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd ad) {
+                        rewardedAd = ad;
+                        Log.d(TAG, "Ad was loaded.");
+                        ServerSideVerificationOptions options = new ServerSideVerificationOptions
+                                .Builder()
+                                .setCustomData("SAMPLE_CUSTOM_DATA_STRING")
+                                .build();
+                        rewardedAd.setServerSideVerificationOptions(options);
+                        showAd();
+                    }
+                });
+
+    }
+
+    private void showAd() {
+        rewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+            @Override
+            public void onAdClicked() {
+                // Called when a click is recorded for an ad.
+                Log.d(TAG, "Ad was clicked.");
+            }
+
+            @Override
+            public void onAdDismissedFullScreenContent() {
+                // Called when ad is dismissed.
+                // Set the ad reference to null so you don't show the ad a second time.
+                Log.d(TAG, "Ad dismissed fullscreen content.");
+                rewardedAd = null;
                 startActivity(new Intent(requireContext(), MainAppActivity.class));
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                break;
+            }
+
+            @Override
+            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                // Called when ad fails to show.
+                Log.e(TAG, "Ad failed to show fullscreen content.");
+                rewardedAd = null;
+            }
+
+            @Override
+            public void onAdImpression() {
+                // Called when an impression is recorded for an ad.
+                Log.d(TAG, "Ad recorded an impression.");
+            }
+
+            @Override
+            public void onAdShowedFullScreenContent() {
+                // Called when ad is shown.
+                Log.d(TAG, "Ad showed fullscreen content.");
+            }
+        });
+
+        if (rewardedAd != null) {
+            rewardedAd.show(requireActivity(), new OnUserEarnedRewardListener() {
+                @Override
+                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+                    // Handle the reward.
+                    Log.d(TAG, "The user earned the reward.");
+                    int rewardAmount = rewardItem.getAmount();
+                    String rewardType = rewardItem.getType();
+                }
+            });
+        } else {
+            Log.d(TAG, "The rewarded ad wasn't ready yet.");
         }
     }
 

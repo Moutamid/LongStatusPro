@@ -55,9 +55,8 @@ public class MainAppActivity extends AppCompatActivity implements View.OnClickLi
     public static int REQUEST_DOWNLOADS = 4;
     private ArrayList<String> videoPaths = new ArrayList<>();
     public static int REQUEST_FILES = 5;
-    private RewardedAd rewardedAd;
     private final String TAG = "MainAppActivity1233";
-    AdRequest adRequest;
+
     ProgressDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +67,9 @@ public class MainAppActivity extends AppCompatActivity implements View.OnClickLi
         setSupportActionBar(toolbar);
         Common.mkDirs();
 
-        adRequest = new AdRequest.Builder().build();
+
         Ads.calledIniti(this);
-        dialog = new ProgressDialog(this);
-        dialog.setCancelable(false);
-        dialog.setMessage("Ad is loading");
-        dialog.show();
-        loadAd();
+
         // showRewardAd();
         findViewById(R.id.upload).setOnClickListener(this);
         findViewById(R.id.settings).setOnClickListener(this);
@@ -104,89 +99,12 @@ public class MainAppActivity extends AppCompatActivity implements View.OnClickLi
         RequestConfiguration configuration = new RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build();
         MobileAds.setRequestConfiguration(configuration);
         MobileAds.initialize(this, initializationStatus -> {
-            loadAd();
+
         });
     }
 
-    private void loadAd() {
-        RewardedAd.load(this, getResources().getString(R.string.Reward_ID),
-                adRequest, new RewardedAdLoadCallback() {
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error.
-                        Log.d(TAG, "Error : " +  loadAdError.toString());
-                        rewardedAd = null;
-                        dialog.dismiss();
-                        Toast.makeText(MainAppActivity.this, "Ad load failed", Toast.LENGTH_SHORT).show();
-                    }
 
-                    @Override
-                    public void onAdLoaded(@NonNull RewardedAd ad) {
-                        rewardedAd = ad;
-                        Log.d(TAG, "Ad was loaded.");
-                        ServerSideVerificationOptions options = new ServerSideVerificationOptions
-                                .Builder()
-                                .setCustomData("SAMPLE_CUSTOM_DATA_STRING")
-                                .build();
-                        rewardedAd.setServerSideVerificationOptions(options);
-                        dialog.dismiss();
-                        showAd();
-                    }
-                });
 
-    }
-
-    private void showAd() {
-        rewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-            @Override
-            public void onAdClicked() {
-                // Called when a click is recorded for an ad.
-                Log.d(TAG, "Ad was clicked.");
-            }
-
-            @Override
-            public void onAdDismissedFullScreenContent() {
-                // Called when ad is dismissed.
-                // Set the ad reference to null so you don't show the ad a second time.
-                Log.d(TAG, "Ad dismissed fullscreen content.");
-                rewardedAd = null;
-            }
-
-            @Override
-            public void onAdFailedToShowFullScreenContent(AdError adError) {
-                // Called when ad fails to show.
-                Log.e(TAG, "Ad failed to show fullscreen content.");
-                rewardedAd = null;
-            }
-
-            @Override
-            public void onAdImpression() {
-                // Called when an impression is recorded for an ad.
-                Log.d(TAG, "Ad recorded an impression.");
-            }
-
-            @Override
-            public void onAdShowedFullScreenContent() {
-                // Called when ad is shown.
-                Log.d(TAG, "Ad showed fullscreen content.");
-            }
-        });
-
-        if (rewardedAd != null) {
-            Activity activityContext = MainAppActivity.this;
-            rewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
-                @Override
-                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                    // Handle the reward.
-                    Log.d(TAG, "The user earned the reward.");
-                    int rewardAmount = rewardItem.getAmount();
-                    String rewardType = rewardItem.getType();
-                }
-            });
-        } else {
-            Log.d(TAG, "The rewarded ad wasn't ready yet.");
-        }
-    }
 
     @Override
     public void onClick(View v) {

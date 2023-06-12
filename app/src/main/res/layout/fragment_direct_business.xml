@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="in.whatsaga.whatsapplongerstatus.status.uploader.ui.fragment.DirectBusinessFragment">
+    tools:context=".ui.fragment.DirectBusinessFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="vertical">
 
@@ -57,33 +57,72 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp22"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_showNameCode="false"
+                    app:ccp_contentColor="@color/dark"
+                    android:layout_weight="2"
+                    android:layout_marginEnd="12sp"
+                    app:ccpDialog_textColor="@color/dark"
+                    app:ccpDialog_showCloseIcon="true"
+                    android:background="@drawable/et_bg"
+                    android:backgroundTint="@color/back_buttn"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/ed_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12sp"
+                    android:backgroundTint="@color/back_buttn"
+                    android:background="@drawable/et_bg"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Phone Number"
+                    android:inputType="number"
+                    android:textColor="@color/dark"
+                    android:textColorHint="@color/textColor" />
+
+            </LinearLayout>
+
             <RelativeLayout
                 android:id="@+id/edit_lay"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="@dimen/_38sdp"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp">
 
-                <com.rilixtech.CountryCodePicker
-                    android:id="@+id/ccp"
-                    android:layout_width="@dimen/_90sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/et_bg"
-                    android:fontFamily="@font/poppins"
-                    app:ccp_hideNameCode="true"
-                    android:padding="15sp"
-                    android:gravity="center"
-                    android:backgroundTint="@color/back_buttn"
-                    android:layout_marginEnd="12sp"/>
+<!--                <com.rilixtech.CountryCodePicker-->
+<!--                    android:id="@+id/ccp"-->
+<!--                    android:layout_width="@dimen/_90sdp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:background="@drawable/et_bg"-->
+<!--                    android:fontFamily="@font/poppins"-->
+<!--                    app:ccp_hideNameCode="true"-->
+<!--                    android:padding="15sp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:backgroundTint="@color/back_buttn"-->
+<!--                    android:layout_marginEnd="12sp"/>-->
 
                 <EditText
-                    android:id="@+id/ed_number"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toEndOf="@+id/ccp"
                     android:background="@drawable/et_bg"
                     android:backgroundTint="@color/back_buttn"
                     android:hint="@string/enter_number"

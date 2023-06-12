@@ -20,7 +20,7 @@ class DirectWhatsappFragment : Fragment(), View.OnClickListener {
     private var mParam2: String? = null
     var edNumber: EditText? = null
     var edMessage: EditText? = null
-    var ccp: CountryCodePicker? = null
+    var ccp: com.hbb20.CountryCodePicker? = null
     var countryCode: String? = null
     var number: String? = null
     var numberWithCountryCode: String? = null
@@ -38,7 +38,7 @@ class DirectWhatsappFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_direct_whatsapp, container, false)
-        ccp = view.findViewById<CountryCodePicker>(R.id.ccp)
+        ccp = view.findViewById<com.hbb20.CountryCodePicker>(R.id.ccp22)
         edNumber = view.findViewById<EditText>(R.id.ed_number)
         edMessage = view.findViewById<EditText>(R.id.ed_msg)
         view.findViewById<View>(R.id.send).setOnClickListener(this)

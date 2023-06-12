@@ -62,7 +62,7 @@
 
                     <RadioGroup
                         android:id="@+id/radio"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:orientation="horizontal"
@@ -75,6 +75,8 @@
                             android:checked="true"
                             android:padding="@dimen/_10sdp"
                             android:text="30 seconds"
+                            android:gravity="center"
+                            android:layout_weight="1"
                             android:fontFamily="@font/poppins"
                             android:buttonTint="@color/orange"
                             android:textColor="@color/black" />
@@ -85,6 +87,8 @@
                             android:layout_height="wrap_content"
                             android:padding="@dimen/_10sdp"
                             android:text="15 seconds"
+                            android:gravity="center"
+                            android:layout_weight="1"
                             android:fontFamily="@font/poppins"
                             android:buttonTint="@color/orange"
                             android:textColor="@color/black" />

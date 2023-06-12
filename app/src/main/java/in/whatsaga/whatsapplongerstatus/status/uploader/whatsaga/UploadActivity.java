@@ -98,8 +98,6 @@ public class UploadActivity extends AppCompatActivity implements MediaPlayer.OnC
         if (v.getId() == R.id.upload) {
 
                         new SplitVideo().execute();
-
-
         }
     }
 
@@ -125,9 +123,6 @@ public class UploadActivity extends AppCompatActivity implements MediaPlayer.OnC
         }
         Common.shareMultipleVideo(UploadActivity.this, videoFiles, "Share Videos");
     }
-
-
-
 
     class SplitVideo extends AsyncTask<Void, Void, Void> {
 
@@ -164,10 +159,7 @@ public class UploadActivity extends AppCompatActivity implements MediaPlayer.OnC
     }
 
     public void onBackPressed() {
-
         super.onBackPressed();
-
-
     }
 
 }

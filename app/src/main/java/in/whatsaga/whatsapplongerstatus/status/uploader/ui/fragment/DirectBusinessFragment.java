@@ -12,7 +12,8 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.rilixtech.CountryCodePicker;
+import com.hbb20.CountryCodePicker;
+
 import in.whatsaga.whatsapplongerstatus.status.uploader.R;
 import in.whatsaga.whatsapplongerstatus.status.uploader.utils.Common;
 
@@ -62,7 +63,7 @@ public class DirectBusinessFragment extends Fragment implements View.OnClickList
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_direct_business, container, false);
 
-        ccp = view.findViewById(R.id.ccp);
+        ccp = view.findViewById(R.id.ccp22);
         edNumber = view.findViewById(R.id.ed_number);
         edMessage = view.findViewById(R.id.ed_msg);
 
