@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fxn.stash.Stash;
 import com.google.android.ads.nativetemplates.TemplateView;
 
 import java.io.File;
@@ -27,6 +28,7 @@ import java.io.File;
 import in.whatsaga.whatsapplongerstatus.status.uploader.R;
 import in.whatsaga.whatsapplongerstatus.status.uploader.adsense.Ads;
 import in.whatsaga.whatsapplongerstatus.status.uploader.utils.Common;
+import in.whatsaga.whatsapplongerstatus.status.uploader.utils.Constants;
 import khangtran.preferenceshelper.PrefHelper;
 
 public class StatusMainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -49,7 +51,12 @@ public class StatusMainActivity extends AppCompatActivity implements View.OnClic
         Ads.calledIniti(this);
 
         TemplateView v1 = findViewById(R.id.my_template);
-        Ads.showNativeAd(this, v1);
+        if (!Stash.getBoolean(Constants.IS_PRO, false)) {
+            Ads.showNativeAd(this, v1);
+        } else {
+            v1.setVisibility(View.GONE);
+        }
+
 
         dialog = new Dialog(this);
 
@@ -70,7 +77,13 @@ public class StatusMainActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.downloads:
-                Ads.loadIntersAD(StatusMainActivity.this, StatusMainActivity.this, DownloadsActivity.class);
+                if (Stash.getBoolean(Constants.IS_PRO, false)) {
+                    startActivity(new Intent(this, DownloadsActivity.class));
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                } else {
+                    Ads.loadIntersAD(StatusMainActivity.this, StatusMainActivity.this, DownloadsActivity.class);
+                }
+
                 break;
 
             case R.id.whatsapp:
@@ -78,10 +91,20 @@ public class StatusMainActivity extends AppCompatActivity implements View.OnClic
                         if (!PrefHelper.getBooleanVal("Permission")) {
                             folderPermissionWhatsapp.show();
                         } else {
-                            Ads.loadIntersAD(StatusMainActivity.this, StatusMainActivity.this, WhatsappActivity.class);
+                            if (Stash.getBoolean(Constants.IS_PRO, false)) {
+                                startActivity(new Intent(this, WhatsappActivity.class));
+                                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                            } else {
+                                Ads.loadIntersAD(StatusMainActivity.this, StatusMainActivity.this, WhatsappActivity.class);
+                            }
                         }
                     } else {
-                        Ads.loadIntersAD(StatusMainActivity.this, StatusMainActivity.this, WhatsappActivity.class);
+                        if (Stash.getBoolean(Constants.IS_PRO, false)) {
+                            startActivity(new Intent(this, WhatsappActivity.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        } else {
+                            Ads.loadIntersAD(StatusMainActivity.this, StatusMainActivity.this, WhatsappActivity.class);
+                        }
                     }
 
                 break;

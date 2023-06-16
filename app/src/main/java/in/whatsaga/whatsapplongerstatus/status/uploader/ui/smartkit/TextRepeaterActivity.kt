@@ -11,12 +11,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import androidx.appcompat.widget.Toolbar
+import com.fxn.stash.Stash
 import com.google.android.gms.ads.AdView
 
 import `in`.whatsaga.whatsapplongerstatus.status.uploader.R
 import `in`.whatsaga.whatsapplongerstatus.status.uploader.adsense.Ads
 import `in`.whatsaga.whatsapplongerstatus.status.uploader.ui.activity.MainActivity
 import `in`.whatsaga.whatsapplongerstatus.status.uploader.utils.Common
+import `in`.whatsaga.whatsapplongerstatus.status.uploader.utils.Constants
 
 class TextRepeaterActivity : AppCompatActivity(), View.OnClickListener {
     var ed_text: EditText? = null
@@ -36,7 +38,9 @@ class TextRepeaterActivity : AppCompatActivity(), View.OnClickListener {
 
         var banner: AdView = findViewById(R.id.adView)
         Ads.calledIniti(this)
-        Ads.showBannerAd(banner)
+        if (!Stash.getBoolean(Constants.IS_PRO, false)) {
+            Ads.showBannerAd(banner)
+        }
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
@@ -130,9 +134,11 @@ class TextRepeaterActivity : AppCompatActivity(), View.OnClickListener {
 
 
     override fun onBackPressed() {
-        Ads.loadIntersAD(
-            this, this,
-            MainActivity::class.java
-        )
+        if (Stash.getBoolean(Constants.IS_PRO, false)) {
+            startActivity(Intent(this, MainActivity::class.java))
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        } else {
+            Ads.loadIntersAD(this, this, MainActivity::class.java)
+        }
     }
 }

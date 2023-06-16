@@ -25,6 +25,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.fxn.stash.Stash;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -33,6 +35,7 @@ import java.nio.charset.Charset;
 import in.whatsaga.whatsapplongerstatus.status.uploader.R;
 import in.whatsaga.whatsapplongerstatus.status.uploader.adsense.Ads;
 import in.whatsaga.whatsapplongerstatus.status.uploader.utils.Common;
+import in.whatsaga.whatsapplongerstatus.status.uploader.utils.Constants;
 import in.whatsaga.whatsapplongerstatus.status.uploader.utils.SharedPref;
 
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
@@ -223,10 +226,12 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onBackPressed() {
-        Ads.loadIntersAD(
-                this, this,
-                MainActivity.class
-        );
+        if (Stash.getBoolean(Constants.IS_PRO, false)) {
+            startActivity(new Intent(this, MainActivity.class));
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        } else {
+            Ads.loadIntersAD(this, this, MainActivity.class);
+        }
     }
 
 

@@ -7,10 +7,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fxn.stash.Stash;
 import com.google.android.material.card.MaterialCardView;
 
 import in.whatsaga.whatsapplongerstatus.status.uploader.R;
 import in.whatsaga.whatsapplongerstatus.status.uploader.adsense.Ads;
+import in.whatsaga.whatsapplongerstatus.status.uploader.utils.Constants;
 import khangtran.preferenceshelper.PrefHelper;
 
 public class LanguageActivity extends AppCompatActivity {
@@ -124,7 +126,12 @@ public class LanguageActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.done).setOnClickListener(v -> {
-            Ads.loadIntersAD(this, this, MainActivity.class);
+            if (Stash.getBoolean(Constants.IS_PRO, false)) {
+                startActivity(new Intent(this, MainActivity.class));
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            } else {
+                Ads.loadIntersAD(this, this, MainActivity.class);
+            }
         });
 
         updatingUi();

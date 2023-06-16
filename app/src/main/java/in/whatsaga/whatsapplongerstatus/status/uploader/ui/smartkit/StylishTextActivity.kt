@@ -1,5 +1,6 @@
 package `in`.whatsaga.whatsapplongerstatus.status.uploader.ui.smartkit
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -8,11 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.fxn.stash.Stash
 import com.google.android.gms.ads.AdView
 import `in`.whatsaga.whatsapplongerstatus.status.uploader.R
 import `in`.whatsaga.whatsapplongerstatus.status.uploader.adsense.Ads
 import `in`.whatsaga.whatsapplongerstatus.status.uploader.ui.activity.MainActivity
 import `in`.whatsaga.whatsapplongerstatus.status.uploader.utils.Common
+import `in`.whatsaga.whatsapplongerstatus.status.uploader.utils.Constants
 import java.util.*
 
 
@@ -33,7 +36,7 @@ class StylishTextActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var letterList: CharArray
     private var recyclerView: RecyclerView? = null
     var adapter: StyleAdapter? = null
-   
+
     private var retryAttempt = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +45,9 @@ class StylishTextActivity : AppCompatActivity(), View.OnClickListener {
 
         var banner: AdView = findViewById(R.id.adView)
         Ads.calledIniti(this)
-        Ads.showBannerAd(banner)
+        if (!Stash.getBoolean(Constants.IS_PRO, false)) {
+            Ads.showBannerAd(banner)
+        }
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
@@ -163,11 +168,12 @@ class StylishTextActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-
     override fun onBackPressed() {
-        Ads.loadIntersAD(
-            this, this,
-            MainActivity::class.java
-        )
+        if (Stash.getBoolean(Constants.IS_PRO, false)) {
+            startActivity(Intent(this, MainActivity::class.java))
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        } else {
+            Ads.loadIntersAD(this, this, MainActivity::class.java)
+        }
     }
 }

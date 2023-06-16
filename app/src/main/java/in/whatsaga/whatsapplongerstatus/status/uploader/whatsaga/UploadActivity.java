@@ -108,17 +108,19 @@ public class UploadActivity extends AppCompatActivity implements MediaPlayer.OnC
                     "video" + i + ".mp4";
             videoFiles.add(Common.splitVideoFolder.getPath() + SEPARATOR +
                     "video" + i + ".mp4");
-
+            Log.i("TAG1111", "outputPath : " + outputPath);
+            Log.i("TAG1111", "path : " + path);
             try {
-                Log.i("TAG", "start : " + start);
-                Log.i("TAG", "end : " + end);
+                Log.i("TAG1111", "start : " + start);
+                Log.i("TAG1111", "end : " + end);
                 new Common().genVideoUsingMuxer(path, outputPath, start, end, true, true);
-                Log.i("TAG", "video saved : " + i);
+                Log.i("TAG1111", "video saved : " + i);
                 start = end;
                 end = end + sharePref.getDuration();
 
             } catch (IOException e) {
                 e.printStackTrace();
+                Log.d("TAG1111", e.getMessage());
             }
         }
         Common.shareMultipleVideo(UploadActivity.this, videoFiles, "Share Videos");

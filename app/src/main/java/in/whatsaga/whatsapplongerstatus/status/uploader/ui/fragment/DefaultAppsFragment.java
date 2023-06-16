@@ -57,6 +57,7 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
     BillingProcessor bp;
     AdRequest adRequest;
     private RewardedAd rewardedAd;
+    ArrayList<String> ids;
     private final String TAG = "RewardAd";
 
     public DefaultAppsFragment() {
@@ -79,11 +80,8 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
         v2 = view.findViewById(R.id.my_template2);
         v3 = view.findViewById(R.id.my_template3);
 
-        Ads.showNativeAd(requireContext(), v1);
-        Ads.showNativeAd(requireContext(), v2);
-        Ads.showNativeAd(requireContext(), v3);
         ImageView lock = view.findViewById(R.id.lock);
-        ArrayList<String> ids = new ArrayList<>();
+        ids = new ArrayList<>();
         ids.add(Constants.YEARLY_IN_WHATSAGA_WHATSAPPLONGERSTATUS_PRO);
         ids.add(Constants.MONTHLY_IN_WHATSAGA_WHATSAPPLONGERSTATUS_PRO);
         ids.add(Constants.WEEKLY_IN_WHATSAGA_WHATSAPPLONGERSTATUS_PRO);
@@ -107,6 +105,30 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
         });
 
         if (Stash.getBoolean(Constants.IS_PRO, false)) {
+            v1.setVisibility(View.GONE);
+            v2.setVisibility(View.GONE);
+            v2.setVisibility(View.GONE);
+            Stash.put(Constants.IS_PRO, true);
+        }
+
+        if (bp.isSubscribed(ids.get(0)) || bp.isSubscribed(ids.get(1)) || bp.isSubscribed(ids.get(2))) {
+            v1.setVisibility(View.GONE);
+            v2.setVisibility(View.GONE);
+            v2.setVisibility(View.GONE);
+            Stash.put(Constants.IS_PRO, true);
+        } else {
+            Ads.showNativeAd(requireContext(), v1);
+            Ads.showNativeAd(requireContext(), v2);
+            Ads.showNativeAd(requireContext(), v3);
+            Stash.put(Constants.IS_PRO, false);
+        }
+
+        if (bp.isSubscribed(ids.get(0)) || bp.isSubscribed(ids.get(1)) || bp.isSubscribed(ids.get(2))){
+            lock.setVisibility(View.GONE);
+            Stash.put(Constants.IS_PRO, true);
+        }
+
+        if (Stash.getBoolean(Constants.IS_PRO, false)) {
             lock.setVisibility(View.GONE);
         }
 
@@ -119,7 +141,9 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
         view.findViewById(R.id.setting).setOnClickListener(this);
         view.findViewById(R.id.media).setOnClickListener(v -> {
             if (Stash.getBoolean(Constants.IS_PRO, false)) {
-                Ads.loadIntersAD(requireContext(), requireActivity(), DeletedMediaActivity.class);
+                startActivity(new Intent(requireContext(), DeletedMediaActivity.class));
+                requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+//                Ads.loadIntersAD(requireContext(), requireActivity(), DeletedMediaActivity.class);
             } else {
                 if (activity != null) {
                     ViewPager viewPager = activity.findViewById(R.id.viewPager);
@@ -157,17 +181,39 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.direct_chat:
-                Ads.loadIntersAD(requireContext(), requireActivity(), DirectActivity.class);
+                if (Stash.getBoolean(Constants.IS_PRO, false)){
+                    startActivity(new Intent(requireContext(), DirectActivity.class));
+                    requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                } else {
+                    Ads.loadIntersAD(requireContext(), requireActivity(), DirectActivity.class);
+                }
+
                 break;
             case R.id.conversation:
-                Ads.loadIntersAD(requireContext(), requireActivity(), ConversationActivity.class);
+                if (Stash.getBoolean(Constants.IS_PRO, false)){
+                    startActivity(new Intent(requireContext(), ConversationActivity.class));
+                    requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                } else {
+                    Ads.loadIntersAD(requireContext(), requireActivity(), ConversationActivity.class);
+                }
                 break;
             case R.id.web:
-                Ads.loadIntersAD(requireContext(), requireActivity(), WebActivity.class);
+                if (Stash.getBoolean(Constants.IS_PRO, false)){
+                    startActivity(new Intent(requireContext(), WebActivity.class));
+                    requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                } else {
+                    Ads.loadIntersAD(requireContext(), requireActivity(), WebActivity.class);
+                }
                 break;
 
             case R.id.long_status:
-                showAdDialog();
+                if (Stash.getBoolean(Constants.IS_PRO, false)){
+                    startActivity(new Intent(requireContext(), MainAppActivity.class));
+                    requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                } else {
+                    showAdDialog();
+                }
+
                 break;
         }
     }
