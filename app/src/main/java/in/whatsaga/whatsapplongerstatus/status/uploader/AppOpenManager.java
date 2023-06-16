@@ -23,6 +23,8 @@ import java.util.Date;
 
 import static androidx.lifecycle.Lifecycle.Event.ON_START;
 
+import in.whatsaga.whatsapplongerstatus.status.uploader.utils.Constants;
+
 /**
  * Prefetches App Open Ads.
  */
@@ -49,34 +51,36 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
     public void showAdIfAvailable() {
         // Only show ad if there is not already an app open ad currently showing
         // and an ad is available.
-        if (!isShowingAd && isAdAvailable()) {
-            Log.d(LOG_TAG, "Will show ad.");
+        if (!Stash.getBoolean(Constants.IS_PRO)){
+            if (!isShowingAd && isAdAvailable()) {
+                Log.d(LOG_TAG, "Will show ad.");
 
-            FullScreenContentCallback fullScreenContentCallback =
-                    new FullScreenContentCallback() {
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-                            // Set the reference to null so isAdAvailable() returns false.
-                            AppOpenManager.this.appOpenAd = null;
-                            isShowingAd = false;
-                            fetchAd();
-                        }
+                FullScreenContentCallback fullScreenContentCallback =
+                        new FullScreenContentCallback() {
+                            @Override
+                            public void onAdDismissedFullScreenContent() {
+                                // Set the reference to null so isAdAvailable() returns false.
+                                AppOpenManager.this.appOpenAd = null;
+                                isShowingAd = false;
+                                fetchAd();
+                            }
 
-                        @Override
-                        public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        }
+                            @Override
+                            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                            }
 
-                        @Override
-                        public void onAdShowedFullScreenContent() {
-                            isShowingAd = true;
-                        }
-                    };
-            appOpenAd.setFullScreenContentCallback(fullScreenContentCallback);
-            appOpenAd.show(currentActivity);
+                            @Override
+                            public void onAdShowedFullScreenContent() {
+                                isShowingAd = true;
+                            }
+                        };
+                appOpenAd.setFullScreenContentCallback(fullScreenContentCallback);
+                appOpenAd.show(currentActivity);
 
-        } else {
-            Log.d(LOG_TAG, "Can not show ad.");
-            fetchAd();
+            } else {
+                Log.d(LOG_TAG, "Can not show ad.");
+                fetchAd();
+            }
         }
     }
 

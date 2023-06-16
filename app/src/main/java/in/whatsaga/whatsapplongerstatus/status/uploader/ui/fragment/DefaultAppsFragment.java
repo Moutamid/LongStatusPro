@@ -107,23 +107,25 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
         if (Stash.getBoolean(Constants.IS_PRO, false)) {
             v1.setVisibility(View.GONE);
             v2.setVisibility(View.GONE);
-            v2.setVisibility(View.GONE);
-            Stash.put(Constants.IS_PRO, true);
+            v3.setVisibility(View.GONE);
         }
 
         if (bp.isSubscribed(ids.get(0)) || bp.isSubscribed(ids.get(1)) || bp.isSubscribed(ids.get(2))) {
             v1.setVisibility(View.GONE);
             v2.setVisibility(View.GONE);
-            v2.setVisibility(View.GONE);
+            v3.setVisibility(View.GONE);
             Stash.put(Constants.IS_PRO, true);
         } else {
+            Stash.put(Constants.IS_PRO, false);
+            v1.setVisibility(View.VISIBLE);
+            v2.setVisibility(View.VISIBLE);
+            v3.setVisibility(View.VISIBLE);
             Ads.showNativeAd(requireContext(), v1);
             Ads.showNativeAd(requireContext(), v2);
             Ads.showNativeAd(requireContext(), v3);
-            Stash.put(Constants.IS_PRO, false);
         }
 
-        if (bp.isSubscribed(ids.get(0)) || bp.isSubscribed(ids.get(1)) || bp.isSubscribed(ids.get(2))){
+        if (bp.isSubscribed(ids.get(0)) || bp.isSubscribed(ids.get(1)) || bp.isSubscribed(ids.get(2))) {
             lock.setVisibility(View.GONE);
             Stash.put(Constants.IS_PRO, true);
         }
@@ -181,7 +183,7 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
                 requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.direct_chat:
-                if (Stash.getBoolean(Constants.IS_PRO, false)){
+                if (Stash.getBoolean(Constants.IS_PRO, false)) {
                     startActivity(new Intent(requireContext(), DirectActivity.class));
                     requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 } else {
@@ -190,7 +192,7 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
 
                 break;
             case R.id.conversation:
-                if (Stash.getBoolean(Constants.IS_PRO, false)){
+                if (Stash.getBoolean(Constants.IS_PRO, false)) {
                     startActivity(new Intent(requireContext(), ConversationActivity.class));
                     requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 } else {
@@ -198,7 +200,7 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
                 }
                 break;
             case R.id.web:
-                if (Stash.getBoolean(Constants.IS_PRO, false)){
+                if (Stash.getBoolean(Constants.IS_PRO, false)) {
                     startActivity(new Intent(requireContext(), WebActivity.class));
                     requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 } else {
@@ -207,7 +209,7 @@ public class DefaultAppsFragment extends Fragment implements View.OnClickListene
                 break;
 
             case R.id.long_status:
-                if (Stash.getBoolean(Constants.IS_PRO, false)){
+                if (Stash.getBoolean(Constants.IS_PRO, false)) {
                     startActivity(new Intent(requireContext(), MainAppActivity.class));
                     requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 } else {

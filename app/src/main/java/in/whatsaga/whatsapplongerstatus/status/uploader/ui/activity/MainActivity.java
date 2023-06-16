@@ -21,6 +21,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.fxn.stash.Stash;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Constants.checkApp(this);
 
         Ads.calledIniti(this);
+        Stash.put(Constants.IS_PRO, true);
 
         //     getAppStatus();
 
