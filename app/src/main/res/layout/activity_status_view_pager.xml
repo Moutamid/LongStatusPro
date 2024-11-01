@@ -18,13 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:scrollbarFadeDuration="2"
-        app:sdMainFabClosedIconColor="@color/white"
-        app:sdMainFabOpenedIconColor="@color/white"
-        app:sdExpansionMode="left"
-        app:sdMainFabClosedBackgroundColor="@color/orange"
-        app:sdMainFabClosedSrc="@drawable/ic_plus"
-        app:sdMainFabOpenedBackgroundColor="@color/orange"
-        app:tint="@color/white" />
+        android:scrollbarFadeDuration="2" />
 
 </RelativeLayout>

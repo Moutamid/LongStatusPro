@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {HiddenMessage.class, LastMessage.class}, version = 1)
+@Database(entities = {HiddenMessage.class, LastMessage.class}, version = 1, exportSchema = false)
 abstract class AppDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "WHAT_SAVE_DATABASE";

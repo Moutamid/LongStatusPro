@@ -53,7 +53,7 @@ public class MainAppActivity extends AppCompatActivity implements View.OnClickLi
     private static final int REQUEST_TAKE_GALLERY_VIDEO = 32;
     private static final int REQUEST_LOAD_VIDEOS = 100;
     public static int REQUEST_DOWNLOADS = 4;
-    private ArrayList<String> videoPaths = new ArrayList<>();
+    private ArrayList<Uri> videoPaths = new ArrayList<>();
     public static int REQUEST_FILES = 5;
     private final String TAG = "MainAppActivity1233";
 
@@ -170,7 +170,7 @@ public class MainAppActivity extends AppCompatActivity implements View.OnClickLi
                     this.videoPaths = new ArrayList<>();
                     this.videoPaths = (ArrayList) data.getSerializableExtra(FilePickerConst.KEY_SELECTED_MEDIA);
                     Intent intent2 = new Intent(this, UploadActivity.class);
-                    intent2.putExtra("path", (String) this.videoPaths.get(0));
+                    intent2.putExtra("path", this.videoPaths.get(0).toString());
                     startActivity(intent2);
                     Common.startAnimation(this);
                 } catch (Exception e) {

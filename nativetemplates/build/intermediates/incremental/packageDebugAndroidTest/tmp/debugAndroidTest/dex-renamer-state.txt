@@ -1,0 +1,4 @@
+#Fri Nov 01 12:36:01 PKT 2024
+base.0=C\:\\Users\\sunny\\Documents\\Recover_projects\\LongStatusPro\\nativetemplates\\build\\intermediates\\dex\\debugAndroidTest\\mergeDexDebugAndroidTest\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
